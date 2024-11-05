@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='ISO-8859-1'?>
-<Schema id="{64425eba-7e55-49fc-a026-e198e7bde0e8}" version="4.0">
+<Schema id="{577d7313-6dcb-4c05-b51c-80abbde14c1b}" version="4.0">
   <ExtractionSettings last="IBM Informix">
     <ExtractionOptions casens="LowerCase" cvmeth="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ignerr="true" systab="false" type="IBM Informix"/>
   </ExtractionSettings>
@@ -2779,6 +2779,7 @@
     <Column fglLength="4" fglType="258" name="idbingo" notNull="true" order="1" status="U"/>
     <Column fglLength="100" fglType="13" name="nombrebingo" notNull="false" order="2" status="U"/>
     <Column fglLength="4" fglType="7" name="fechabingo" notNull="false" order="3" status="U"/>
+    <Column fglLength="1" fglType="0" name="estado" notNull="false" order="4" status="U"/>
     <Index indexColumns="idbingo" indexConstraint="primaryKey" name="u5351_4737" status="U"/>
   </Table>
   <Table name="bingo_afiliado" isView="false" status="U">

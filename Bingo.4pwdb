@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<WorkspaceDatabase fileContentsEncoding="iso88591" version="2.0"/>
+<WorkspaceDatabase fileContentsEncoding="iso88591" version="2.0">
+<File m="llenar_combos" n="llenar_combos.4gl" ts="20241105084103554">
+<Fct c="10" el="26" l="3" n="llenar_combo_tipo_documento()" t="F" v="pub"/>
+</File>
+<File m="b_formulario" n="b_formulario.4gl" ts="20241105083543675">
+<Fct c="10" el="11" l="1" n="abrir_formulario_principal()" t="F" v="pub">
+<Call c="6" l="5" n="llenar_combo_tipo_documento" p="llenar_combos.4gl" t="F"/>
+</Fct>
+</File>
+<File m="b_main" n="b_main.4gl" ts="20241105083144328">
+<Fct c="1" el="5" l="3" n="main()" t="F" v="pub">
+<Call c="6" l="4" n="abrir_formulario_principal" p="b_formulario.4gl" t="F"/>
+</Fct>
+</File>
+</WorkspaceDatabase>

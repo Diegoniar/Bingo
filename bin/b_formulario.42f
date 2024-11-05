@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<Form name="b_formulario.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="24">
+  <LStr text="Form"/>
+  <Grid name="grid1" width="78" height="24">
+    <Label name="label1" width="76" text="BINGO COMFAORIENTE - SOLO BENEFICIOS" justify="center" posY="1" posX="1" gridWidth="76">
+      <LStr text="BINGO COMFAORIENTE - SOLO BENEFICIOS"/>
+    </Label>
+    <Label name="label2" width="35" text="SELECCIONE EL BINGO EN EL QUE DESEA PARTICIPAR" posY="3" posX="1" gridWidth="35">
+      <LStr text="SELECCIONE EL BINGO EN EL QUE DESEA PARTICIPAR"/>
+    </Label>
+    <FormField name="bingo.idbingo" colName="idbingo" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="bingo" tabIndex="1">
+      <ComboBox width="37" posY="3" posX="38" gridWidth="39"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="bingo">
+    <Link colName="idbingo" fieldIdRef="0"/>
+  </RecordView>
+  <RecordView tabName="undefined">
+    <Link colName="idbingo" fieldIdRef="0"/>
+  </RecordView>
+</Form>
