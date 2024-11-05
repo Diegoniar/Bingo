@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ISO-8859-1'?>
-<Form name="b_bingo.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="9">
+<Form name="b_bingo.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="23">
   <LStr text="Form"/>
-  <Grid name="grid1" width="78" height="9">
+  <Grid name="grid1" width="78" height="23">
     <Label name="label1" width="76" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE" justify="center" posY="1" posX="1" gridWidth="76">
       <LStr text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
     </Label>
@@ -32,6 +32,7 @@
         <Item name="I" text="INACTIVO"/>
       </ComboBox>
     </FormField>
+    <Image name="image1" width="52" height="13" image="bingo" posY="9" posX="12" gridWidth="52" gridHeight="13"/>
   </Grid>
   <RecordView tabName="bingo">
     <Link colName="idbingo" fieldIdRef="0"/>

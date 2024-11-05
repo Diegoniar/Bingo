@@ -4,14 +4,21 @@
 <Fct c="10" el="51" l="28" n="llenar_combo_bingo()" t="F" v="pub"/>
 <Fct c="10" el="26" l="3" n="llenar_combo_tipo_documento()" t="F" v="pub"/>
 </File>
-<File m="b_formulario" n="b_formulario.4gl" ts="20241105085421281">
+<File m="b_bingo" n="b_bingo.4gl" ts="20241105113330796">
+<Fct c="10" el="16" l="15" n="adicionar_bingo()" t="F" v="pub"/>
+<Fct c="10" el="13" l="3" n="b_bingo_main()" t="F" v="pub">
+<Call c="14" l="8" n="adicionar_bingo" t="F"/>
+</Fct>
+</File>
+<File m="b_formulario" n="b_formulario.4gl" ts="20241105115519883">
 <Fct c="10" el="16" l="3" n="abrir_formulario_principal()" t="F" v="pub">
 <Call c="16" l="9" n="llenar_combo_bingo" p="llenar_combos.4gl" t="F"/>
 </Fct>
 </File>
-<File m="b_main" n="b_main.4gl" ts="20241105085421288">
-<Fct c="1" el="5" l="3" n="main()" t="F" v="pub">
-<Call c="6" l="4" n="abrir_formulario_principal" p="b_formulario.4gl" t="F"/>
+<File m="b_main" n="b_main.4gl" ts="20241105115519887">
+<Fct c="1" el="14" l="3" n="main()" t="F" v="pub">
+<Call c="10" l="7" n="abrir_formulario_principal" p="b_formulario.4gl" t="F"/>
+<Call c="10" l="10" n="b_bingo_main" p="b_bingo.4gl" t="F"/>
 </Fct>
 </File>
 </WorkspaceDatabase>

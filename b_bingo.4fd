@@ -9,8 +9,8 @@
     <RecordField colName="fechabingo" fieldIdRef="3" fieldType="TABLE_COLUMN" name="bingo.fechabingo" sqlTabName="bingo" uid="{2c7bce97-d4d8-428d-92c0-8f558ca0cda5}"/>
     <RecordField fieldIdRef="4" name="combobox1" uid="{6fb79195-c0cc-4820-a013-f7f15827d9bf}"/>
   </Record>
-  <Form gridHeight="10" gridWidth="80" name="form" text="Form">
-    <Grid gridHeight="9" gridWidth="78" name="grid1" posX="1" posY="0">
+  <Form gridHeight="24" gridWidth="80" name="form" text="Form">
+    <Grid gridHeight="23" gridWidth="78" name="grid1" posX="1" posY="0">
       <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
       <Label gridHeight="1" gridWidth="9" name="label2" posX="1" posY="3" text="BINGO N°"/>
       <Edit colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="9" name="bingo.idbingo" noEntry="true" posX="11" posY="3" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>

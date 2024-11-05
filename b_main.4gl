@@ -8,6 +8,7 @@ ON ACTION formulario
 
 ON ACTION Bingo
     CALL b_bingo_main()
+    
 ON ACTION Salir
     EXIT MENU 
 END MENU 

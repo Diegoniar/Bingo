@@ -63,7 +63,7 @@
   </Settings>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
-  <Group environment="dir:PRYDIR=$(ProjectDir)/." label="Group" language="Genero">
+  <Group environment="dir:FGLIMAGEPATH=$(ProjectDir)/Imagenes" label="Group" language="Genero">
     <Application binaryName="Application" dependencies="5,6" id="4" label="Application">
       <VirtualFolder label="controlador">
         <File filePath="llenar_combos.4gl"/>
@@ -76,6 +76,7 @@
       <VirtualFolder label="vista">
         <File filePath="b_bingo.4fd"/>
         <File filePath="b_formulario.4fd"/>
+        <File filePath="b_main.4fd"/>
       </VirtualFolder>
     </Application>
     <Library binaryName="Databases" id="6" label="Databases">
