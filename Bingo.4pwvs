@@ -17,9 +17,13 @@
     <Document container="true" filePath="b_formulario.4gl" locator="9:36" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
-    <Document container="true" filePath="llenar_combos.4gl" locator="35:44" module="mod-ce3">
+    <Document container="true" filePath="llenar_combos.4gl" locator="33:13" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
+    <Document container="true" filePath="b_bingo.4gl" locator="4:1" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="b_bingo.4fd" locator="" module="mod-fd"/>
   </OpenDocuments>
-  <CurrentDocument filePath="llenar_combos.4gl" module="mod-ce3"/>
+  <CurrentDocument filePath="b_bingo.4fd" module="mod-fd"/>
 </WorkspaceViewState>

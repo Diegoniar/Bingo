@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<Form name="b_bingo.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="9">
+  <LStr text="Form"/>
+  <Grid name="grid1" width="78" height="9">
+    <Label name="label1" width="76" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE" justify="center" posY="1" posX="1" gridWidth="76">
+      <LStr text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
+    </Label>
+    <Label name="label2" width="9" text="BINGO N°" posY="3" posX="1" gridWidth="9">
+      <LStr text="BINGO N°"/>
+    </Label>
+    <FormField name="bingo.idbingo" colName="idbingo" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="bingo" noEntry="1" tabIndex="1">
+      <Edit width="9" posY="3" posX="11" gridWidth="9"/>
+    </FormField>
+    <Label name="label3" width="14" text="NOMBRE DEL BINGO:" posY="5" posX="1" gridWidth="14">
+      <LStr text="NOMBRE DEL BINGO:"/>
+    </Label>
+    <FormField name="bingo.nombrebingo" colName="nombrebingo" sqlType="VARCHAR(100)" fieldId="1" sqlTabName="bingo" tabIndex="2">
+      <Edit width="61" posY="5" posX="16" gridWidth="61"/>
+    </FormField>
+    <Label name="label4" width="14" text="FECHA DEL BINGO:" posY="7" posX="1" gridWidth="14">
+      <LStr text="FECHA DEL BINGO:"/>
+    </Label>
+    <FormField name="bingo.fechabingo" colName="fechabingo" sqlType="DATE" fieldId="2" sqlTabName="bingo" tabIndex="3">
+      <DateEdit width="13" posY="7" posX="16" gridWidth="15"/>
+    </FormField>
+    <Label name="label5" width="14" text="ESTADO DEL BINGO:" posY="7" posX="44" gridWidth="14">
+      <LStr text="ESTADO DEL BINGO:"/>
+    </Label>
+    <FormField name="formonly.combobox1" colName="combobox1" fieldId="3" sqlTabName="formonly" tabIndex="4">
+      <ComboBox width="16" posY="7" posX="59" gridWidth="18">
+        <Item name="A" text="ACTIVO"/>
+        <Item name="I" text="INACTIVO"/>
+      </ComboBox>
+    </FormField>
+  </Grid>
+  <RecordView tabName="bingo">
+    <Link colName="idbingo" fieldIdRef="0"/>
+    <Link colName="nombrebingo" fieldIdRef="1"/>
+    <Link colName="fechabingo" fieldIdRef="2"/>
+  </RecordView>
+  <RecordView tabName="formonly">
+    <Link colName="combobox1" fieldIdRef="3"/>
+  </RecordView>
+  <RecordView tabName="undefined">
+    <Link colName="idbingo" fieldIdRef="0"/>
+    <Link colName="nombrebingo" fieldIdRef="1"/>
+    <Link colName="fechabingo" fieldIdRef="2"/>
+    <Link colName="combobox1" fieldIdRef="3"/>
+  </RecordView>
+</Form>
