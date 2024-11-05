@@ -2,7 +2,14 @@
 <WorkspaceViewState version="1.0">
   <ExpandedNodes>
     <Node path="Bingo.4pw" type="pm/main-project"/>
+    <Node path="Bingo.4pw/Group" type="pm/group"/>
+    <Node path="Bingo.4pw/Group/Application" type="pm/application"/>
   </ExpandedNodes>
-  <OpenDocuments/>
-  <CurrentDocument filePath="" module="mod-wp"/>
+  <OpenDocuments>
+    <Document container="true" filePath="b_main.4gl" locator="1:1" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="Empresa.4db" locator="" module="mod-db3"/>
+  </OpenDocuments>
+  <CurrentDocument filePath="Empresa.4db" module="mod-db3"/>
 </WorkspaceViewState>

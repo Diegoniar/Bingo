@@ -64,8 +64,12 @@
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
   <Group label="Group" language="Genero">
-    <Application binaryName="Application" dependencies="5,6" id="4" label="Application"/>
-    <Library binaryName="Databases" id="6" label="Databases"/>
+    <Application binaryName="Application" dependencies="5,6" id="4" label="Application">
+      <File filePath="b_main.4gl"/>
+    </Application>
+    <Library binaryName="Databases" id="6" label="Databases">
+      <File filePath="Empresa.4db"/>
+    </Library>
     <Library binaryName="Library" dependencies="6" externalDependencies="libgre.42x" id="5" label="Library"/>
   </Group>
 </Project>
