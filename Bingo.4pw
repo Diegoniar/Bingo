@@ -66,6 +66,8 @@
   <Group environment="dir:FGLIMAGEPATH=$(ProjectDir)/Imagenes" label="Group" language="Genero">
     <Application binaryName="Application" dependencies="5,6" id="4" label="Application">
       <VirtualFolder label="controlador">
+        <File filePath="funciones_genericas.4gl"/>
+        <File filePath="interaccion_bd.4gl"/>
         <File filePath="llenar_combos.4gl"/>
       </VirtualFolder>
       <VirtualFolder label="modelo">

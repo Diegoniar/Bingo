@@ -22,6 +22,8 @@ FOREACH c_coddoc INTO r_gen18.*
     CALL cb.addItem(r_gen18.coddoc CLIPPED, r_gen18.detdoc CLIPPED)
 END FOREACH 
 
+CLOSE c_coddoc
+
 RETURN cb
 END FUNCTION 
 
@@ -46,6 +48,8 @@ INITIALIZE r_bingo.* TO NULL
 FOREACH c_bingo INTO r_bingo.*
     CALL cb.addItem(r_bingo.idBingo, r_bingo.nombreBingo)
 END FOREACH  
+
+CLOSE c_bingo
 
 RETURN cb
 END FUNCTION 

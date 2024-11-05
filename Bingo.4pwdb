@@ -1,24 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <WorkspaceDatabase fileContentsEncoding="iso88591" version="2.0">
+<File m="funciones_genericas" n="funciones_genericas.4gl" ts="20241105161140362">
+<Fct c="10" el="128" l="114" n="quitar_espacios(ruta STRING)" t="F" v="pub"/>
+<Fct c="10" el="112" l="93" n="retorna_extension(mruta2 STRING)" t="F" v="pub"/>
+<Fct c="10" el="91" l="79" n="longitud_sin_punto(ruta STRING)" t="F" v="pub"/>
+<Fct c="10" el="77" l="27" n="agregar_imagenes()" t="F" v="pub">
+<Call c="6" l="35" n="WINOPENFILE" t="F"/>
+<Call c="10" l="42" n="quitar_espacios" t="F"/>
+<Call c="10" l="46" n="fgl_winmessage" t="F"/>
+<Call c="6" l="53" n="longitud_sin_punto" t="F"/>
+<Call c="10" l="55" n="retorna_extension" t="F"/>
+<Call c="10" l="57" n="fgl_winmessage" t="F"/>
+<Call c="10" l="62" n="fgl_winmessage" t="F"/>
+</Fct>
+<Fct c="10" el="25" l="17" n="validar_fecha(fechabingo DATE)" t="F" v="pub"/>
+<Fct c="10" el="15" l="3" n="traer_consecutivo_bingo()" t="F" v="pub"/>
+</File>
 <File m="llenar_combos" n="llenar_combos.4gl" ts="20241105085421285">
 <Fct c="10" el="51" l="28" n="llenar_combo_bingo()" t="F" v="pub"/>
 <Fct c="10" el="26" l="3" n="llenar_combo_tipo_documento()" t="F" v="pub"/>
 </File>
-<File m="b_bingo" n="b_bingo.4gl" ts="20241105113330796">
-<Fct c="10" el="16" l="15" n="adicionar_bingo()" t="F" v="pub"/>
-<Fct c="10" el="13" l="3" n="b_bingo_main()" t="F" v="pub">
-<Call c="14" l="8" n="adicionar_bingo" t="F"/>
+<File m="b_bingo" n="b_bingo.4gl" ts="20241105161140368">
+<Fct c="10" el="96" l="23" n="adicionar_bingo()" t="F" v="pub">
+<Call c="27" l="38" n="traer_consecutivo_bingo" p="funciones_genericas.4gl" t="F"/>
+<Call c="14" l="43" n="fgl_winmessage" t="F"/>
+<Call c="14" l="51" n="fgl_winmessage" t="F"/>
+<Call c="16" l="54" n="validar_fecha" p="funciones_genericas.4gl" t="F"/>
+<Call c="18" l="55" n="fgl_winmessage" t="F"/>
+<Call c="14" l="64" n="fgl_winmessage" t="F"/>
+<Call c="26" l="69" n="agregar_imagenes" p="funciones_genericas.4gl" t="F"/>
+<Call c="14" l="73" n="fgl_winmessage" t="F"/>
+<Call c="14" l="80" n="fgl_winmessage" t="F"/>
+<Call c="16" l="83" n="validar_fecha" p="funciones_genericas.4gl" t="F"/>
+<Call c="18" l="84" n="fgl_winmessage" t="F"/>
+<Call c="14" l="92" n="fgl_winmessage" t="F"/>
+</Fct>
+<Fct c="10" el="21" l="11" n="b_bingo_main()" t="F" v="pub">
+<Call c="14" l="16" n="adicionar_bingo" t="F"/>
 </Fct>
 </File>
-<File m="b_formulario" n="b_formulario.4gl" ts="20241105115519883">
+<File m="b_formulario" n="b_formulario.4gl" ts="20241105151645621">
 <Fct c="10" el="16" l="3" n="abrir_formulario_principal()" t="F" v="pub">
 <Call c="16" l="9" n="llenar_combo_bingo" p="llenar_combos.4gl" t="F"/>
 </Fct>
 </File>
-<File m="b_main" n="b_main.4gl" ts="20241105115519887">
-<Fct c="1" el="14" l="3" n="main()" t="F" v="pub">
-<Call c="10" l="7" n="abrir_formulario_principal" p="b_formulario.4gl" t="F"/>
-<Call c="10" l="10" n="b_bingo_main" p="b_bingo.4gl" t="F"/>
+<File m="b_main" n="b_main.4gl" ts="20241105151645626">
+<Fct c="1" el="18" l="3" n="main()" t="F" v="pub">
+<Call c="10" l="8" n="b_bingo_main" p="b_bingo.4gl" t="F"/>
+<Call c="10" l="11" n="abrir_formulario_principal" p="b_formulario.4gl" t="F"/>
 </Fct>
 </File>
 </WorkspaceDatabase>

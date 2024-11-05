@@ -7,25 +7,26 @@
     <RecordField colName="idbingo" fieldIdRef="1" fieldType="TABLE_COLUMN" name="bingo.idbingo" sqlTabName="bingo" uid="{bbe58942-ee35-4be8-898c-45f8143f3610}"/>
     <RecordField colName="nombrebingo" fieldIdRef="2" fieldType="TABLE_COLUMN" name="bingo.nombrebingo" sqlTabName="bingo" uid="{3da07518-d18c-434e-8132-850abd7249d9}"/>
     <RecordField colName="fechabingo" fieldIdRef="3" fieldType="TABLE_COLUMN" name="bingo.fechabingo" sqlTabName="bingo" uid="{2c7bce97-d4d8-428d-92c0-8f558ca0cda5}"/>
-    <RecordField fieldIdRef="4" name="combobox1" uid="{6fb79195-c0cc-4820-a013-f7f15827d9bf}"/>
+    <RecordField colName="estado" fieldIdRef="4" fieldType="TABLE_COLUMN" name="bingo.estado" sqlTabName="bingo" uid="{6fb79195-c0cc-4820-a013-f7f15827d9bf}"/>
   </Record>
-  <Form gridHeight="24" gridWidth="80" name="form" text="Form">
-    <Grid gridHeight="23" gridWidth="78" name="grid1" posX="1" posY="0">
+  <Form gridHeight="14" gridWidth="80" name="form" text="Form">
+    <Grid gridHeight="13" gridWidth="78" name="grid1" posX="1" posY="0">
       <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
       <Label gridHeight="1" gridWidth="9" name="label2" posX="1" posY="3" text="BINGO N°"/>
       <Edit colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="9" name="bingo.idbingo" noEntry="true" posX="11" posY="3" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="14" name="label3" posX="1" posY="5" text="NOMBRE DEL BINGO:"/>
-      <Edit colName="nombrebingo" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="61" name="bingo.nombrebingo" posX="16" posY="5" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Edit case="upper" colName="nombrebingo" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="61" name="bingo.nombrebingo" posX="16" posY="5" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="14" name="label4" posX="1" posY="7" text="FECHA DEL BINGO:"/>
       <DateEdit colName="fechabingo" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="15" name="bingo.fechabingo" posX="16" posY="7" sqlTabName="bingo" tabIndex="-1" title="dateedit1" widget="DateEdit"/>
       <Label gridHeight="1" gridWidth="14" name="label5" posX="44" posY="7" text="ESTADO DEL BINGO:"/>
-      <ComboBox fieldId="4" gridHeight="1" gridWidth="18" items="ACTIVO, INACTIVO" name="combobox1" posX="59" posY="7" tabIndex="-1" title="combobox1" widget="ComboBox">
+      <ComboBox colName="estado" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="18" items="ACTIVO, INACTIVO" name="bingo.estado" posX="59" posY="7" sqlTabName="bingo" tabIndex="-1" title="combobox1" widget="ComboBox">
         <Item lstrtext="false" name="A" text="ACTIVO"/>
         <Item lstrtext="false" name="I" text="INACTIVO"/>
       </ComboBox>
+      <Button gridHeight="3" gridWidth="19" image="upload" name="poster" posX="28" posY="9" tabIndex="-1" text=" Cargar Imagén"/>
     </Grid>
   </Form>
   <DiagramLayout>
-    <![CDATA[AAAAAgAAAEwAewA3ADcAMwBmAGYAMgBjADYALQAyAGEAZQA2AC0ANABiAGEANwAtAGEAMQAzADMALQBlADMAZQA2ADQANwAxAGYANQAxAGUANgB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+    <![CDATA[AAAAAgAAAEwAewA3ADcAMwBmAGYAMgBjADYALQAyAGEAZQA2AC0ANABiAGEANwAtAGEAMQAzADMALQBlADMAZQA2ADQANwAxAGYANQAxAGUANgB9AAAAAAAAAAAAAAAAAAAAAD9QYk3S8an8AQ==]]>
   </DiagramLayout>
 </ManagedForm>

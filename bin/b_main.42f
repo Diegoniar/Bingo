@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<Form name="b_main.tmp" build="3.10.18" sqlDbName="empresa" text="Bingos Comfaoriente" width="91" height="24">
+  <ToolBar name="toolbar1">
+    <ToolBarItem name="gestion_bingos" image="icono_bingo" text="Gestión Bingos">
+      <LStr text="Gestión Bingos"/>
+    </ToolBarItem>
+    <ToolBarItem name="formulario" image="icono_formulario" text="Formularios">
+      <LStr text="Formularios"/>
+    </ToolBarItem>
+    <ToolBarSeparator name="toolbarseparator1"/>
+    <ToolBarItem name="salir" image="icono_exit" text="Salir">
+      <LStr text="Salir"/>
+    </ToolBarItem>
+  </ToolBar>
+  <LStr text="Bingos Comfaoriente"/>
+  <Grid name="grid1" width="91" height="24">
+    <Image name="image1" width="55" height="14" image="bingo" posY="2" posX="35" gridWidth="55" gridHeight="14"/>
+  </Grid>
+</Form>

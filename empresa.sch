@@ -2230,6 +2230,7 @@ bingo^idbingo^258^4^1^
 bingo^nombrebingo^13^100^2^
 bingo^fechabingo^7^4^3^
 bingo^estado^0^1^4^
+bingo^poster^13^120^5^
 bingo_afiliado^tipodocumento^256^2^1^
 bingo_afiliado^documentoafiliado^269^15^2^
 bingo_afiliado^priape^13^50^3^
@@ -34389,8 +34390,8 @@ tes04^nota1^0^70^14^
 tes04^nota2^0^70^15^
 tes04^contabiliza^0^1^16^
 tes06^codconta^0^2^1^
-tes06^tipo^0^5^2^
-tes06^documento^0^12^3^
+tes06^tipo^0^2^2^
+tes06^documento^0^7^3^
 tes06^cedben^0^14^4^
 tes06^nombre^0^25^5^
 tes07^codconta^0^2^1^

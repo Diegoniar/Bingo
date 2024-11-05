@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ISO-8859-1'?>
-<Form name="b_bingo.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="23">
+<Form name="b_bingo.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="13">
   <LStr text="Form"/>
-  <Grid name="grid1" width="78" height="23">
+  <Grid name="grid1" width="78" height="13">
     <Label name="label1" width="76" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE" justify="center" posY="1" posX="1" gridWidth="76">
       <LStr text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
     </Label>
@@ -26,26 +26,26 @@
     <Label name="label5" width="14" text="ESTADO DEL BINGO:" posY="7" posX="44" gridWidth="14">
       <LStr text="ESTADO DEL BINGO:"/>
     </Label>
-    <FormField name="formonly.combobox1" colName="combobox1" fieldId="3" sqlTabName="formonly" tabIndex="4">
+    <FormField name="bingo.estado" colName="estado" sqlType="CHAR(1)" fieldId="3" sqlTabName="bingo" tabIndex="4">
       <ComboBox width="16" posY="7" posX="59" gridWidth="18">
         <Item name="A" text="ACTIVO"/>
         <Item name="I" text="INACTIVO"/>
       </ComboBox>
     </FormField>
-    <Image name="image1" width="52" height="13" image="bingo" posY="9" posX="12" gridWidth="52" gridHeight="13"/>
+    <Button name="poster" width="19" height="3" text=" Cargar Imagén" image="upload" posY="9" posX="28" gridWidth="19" gridHeight="3" tabIndex="5">
+      <LStr text=" Cargar Imagén"/>
+    </Button>
   </Grid>
   <RecordView tabName="bingo">
     <Link colName="idbingo" fieldIdRef="0"/>
     <Link colName="nombrebingo" fieldIdRef="1"/>
     <Link colName="fechabingo" fieldIdRef="2"/>
-  </RecordView>
-  <RecordView tabName="formonly">
-    <Link colName="combobox1" fieldIdRef="3"/>
+    <Link colName="estado" fieldIdRef="3"/>
   </RecordView>
   <RecordView tabName="undefined">
     <Link colName="idbingo" fieldIdRef="0"/>
     <Link colName="nombrebingo" fieldIdRef="1"/>
     <Link colName="fechabingo" fieldIdRef="2"/>
-    <Link colName="combobox1" fieldIdRef="3"/>
+    <Link colName="estado" fieldIdRef="3"/>
   </RecordView>
 </Form>
