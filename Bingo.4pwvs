@@ -14,23 +14,23 @@
       <Data name="8" value="CP1252"/>
     </Document>
     <Document container="true" filePath="b_formulario.4fd" locator="" module="mod-fd"/>
-    <Document container="true" filePath="b_formulario.4gl" locator="3:1" module="mod-ce3">
+    <Document container="true" filePath="b_formulario.4gl" locator="67:87" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
-    <Document container="true" filePath="llenar_combos.4gl" locator="52:14" module="mod-ce3">
+    <Document container="true" filePath="llenar_combos.4gl" locator="7:46" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
-    <Document container="true" filePath="b_bingo.4gl" locator="108:8" module="mod-ce3">
+    <Document container="true" filePath="b_bingo.4gl" locator="45:1" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
     <Document container="true" filePath="b_bingo.4fd" locator="" module="mod-fd"/>
     <Document container="true" filePath="b_main.4fd" locator="" module="mod-fd"/>
-    <Document container="true" filePath="funciones_genericas.4gl" locator="62:84" module="mod-ce3">
+    <Document container="true" filePath="funciones_genericas.4gl" locator="64:8" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
-    <Document container="true" filePath="interaccion_bd.4gl" locator="19:17" module="mod-ce3">
+    <Document container="true" filePath="interaccion_bd.4gl" locator="39:26" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
   </OpenDocuments>
-  <CurrentDocument filePath="b_bingo.4gl" module="mod-ce3"/>
+  <CurrentDocument filePath="b_formulario.4gl" module="mod-ce3"/>
 </WorkspaceViewState>

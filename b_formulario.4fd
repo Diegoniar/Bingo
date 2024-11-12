@@ -5,12 +5,30 @@
   </AGSettings>
   <Record name="Undefined" uid="{f70756ec-fa3c-42b1-af05-2fee0ad5e246}">
     <RecordField colName="idbingo" fieldIdRef="1" fieldType="TABLE_COLUMN" name="bingo.idbingo" sqlTabName="bingo" uid="{8df0c0f9-e8d2-47ee-b169-76e34031abdc}"/>
+    <RecordField colName="coddoc" fieldIdRef="2" fieldType="TABLE_COLUMN" name="gener18.coddoc" sqlTabName="gener18" uid="{13a1af9e-d539-46d1-aa06-0b7dbedfc835}"/>
+    <RecordField colName="documentoafiliado" fieldIdRef="3" fieldType="TABLE_COLUMN" name="bingo_formulario.documentoafiliado" sqlTabName="bingo_formulario" uid="{84d7466c-13d5-4ccd-9a1e-b0f421d19fdd}"/>
+    <RecordField fieldIdRef="7" fieldType="NON_DATABASE" length="50" name="nombreAfiliado" sqlType="VARCHAR" uid="{fdc635df-4ce9-4cbf-81b7-dc7bfb0ad002}"/>
+    <RecordField colName="nit" fieldIdRef="4" fieldType="TABLE_COLUMN" name="subsi15.nit" sqlTabName="subsi15" uid="{243c0438-04cb-4037-bbf2-9bf47b077d2c}"/>
+    <RecordField colName="razsoc" fieldIdRef="5" fieldType="TABLE_COLUMN" name="subsi02.razsoc" sqlTabName="subsi02" uid="{ba70b30a-e55d-4fc4-be38-dd5f52b7f998}"/>
+    <RecordField colName="codcat" fieldIdRef="6" fieldType="TABLE_COLUMN" name="subsi15.codcat" sqlTabName="subsi15" uid="{e2216bba-fea3-42a6-a83b-ae716ced037b}"/>
   </Record>
-  <Form gridHeight="25" gridWidth="80" name="form" text="Form">
-    <Grid gridHeight="24" gridWidth="78" name="grid1" posX="1" posY="0">
+  <Form gridHeight="25" gridWidth="88" name="form" text="Formulario Bingo">
+    <Grid gridHeight="24" gridWidth="86" name="grid1" posX="1" posY="0">
       <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="BINGO COMFAORIENTE - SOLO BENEFICIOS"/>
-      <Label gridHeight="1" gridWidth="35" name="label2" posX="1" posY="3" text="SELECCIONE EL BINGO EN EL QUE DESEA PARTICIPAR"/>
-      <ComboBox colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" name="bingo.idbingo" posX="38" posY="3" sqlTabName="bingo" tabIndex="-1" title="combobox1" widget="ComboBox"/>
+      <Label gridHeight="1" gridWidth="35" name="label2" posX="1" posY="3" text="SELECCIONE EL BINGO EN EL QUE DESEA PARTICIPAR:"/>
+      <ComboBox colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" name="bingo.idbingo" posX="46" posY="3" sqlTabName="bingo" tabIndex="-1" title="combobox1" widget="ComboBox"/>
+      <Label gridHeight="1" gridWidth="35" name="label3" posX="1" posY="4" text="TIPO DE DOCUMENTO DEL AFILIADO:"/>
+      <ComboBox colName="coddoc" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" name="gener18.coddoc" posX="46" posY="4" sqlTabName="gener18" tabIndex="-1" title="combobox1" widget="ComboBox"/>
+      <Label gridHeight="1" gridWidth="35" name="label4" posX="1" posY="5" text="NUMERO DE DOCUMENTO:"/>
+      <Edit colName="documentoafiliado" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" name="bingo_formulario.documentoafiliado" posX="46" posY="5" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label8" posX="2" posY="6" text="NOMBRE AFILIADO:"/>
+      <Edit fieldId="7" fieldType="NON_DATABASE" gridHeight="1" gridWidth="47" length="50" name="nombreAfiliado" posX="38" posY="6" sqlType="VARCHAR" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label5" posX="1" posY="7" text="NIT EMPRESA:"/>
+      <Edit colName="nit" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" name="subsi15.nit" noEntry="true" posX="46" posY="7" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label6" posX="1" posY="8" text="NOMBRE EMPRESA: "/>
+      <Edit colName="razsoc" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="47" name="subsi02.razsoc" noEntry="true" posX="38" posY="8" sqlTabName="subsi02" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label7" posX="1" posY="9" text="CATEGORIA DEL AFILIADO:"/>
+      <Edit colName="codcat" fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="21" name="subsi15.codcat" posX="64" posY="9" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
     </Grid>
   </Form>
   <DiagramLayout>

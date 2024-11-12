@@ -15,7 +15,7 @@
       <LStr text="NOMBRE DEL BINGO:"/>
     </Label>
     <FormField name="bingo.nombrebingo" colName="nombrebingo" sqlType="VARCHAR(100)" fieldId="1" sqlTabName="bingo" tabIndex="2">
-      <Edit width="61" posY="5" posX="16" gridWidth="61"/>
+      <Edit width="61" shift="up" posY="5" posX="16" gridWidth="61"/>
     </FormField>
     <Label name="label4" width="14" text="FECHA DEL BINGO:" posY="7" posX="1" gridWidth="14">
       <LStr text="FECHA DEL BINGO:"/>

@@ -3,8 +3,8 @@ DATABASE empresa
 FUNCTION llenar_combo_tipo_documento ()
 DEFINE cb      ui.ComboBox,
        r_gen18 RECORD
-        coddoc LIKE gener18.coddoc,
-        detdoc LIKE gener18.detdoc
+        coddoc            LIKE gener18.coddoc,
+        detdoc            LIKE gener18.detdoc
        END RECORD 
 
 LET cb = ui.ComboBox.forName("gener18.coddoc")

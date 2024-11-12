@@ -14,6 +14,10 @@ OPEN WINDOW w_bingo WITH FORM "b_bingo"
 MENU
     ON ACTION Adicionar
         CALL adicionar_bingo()
+
+    ON ACTION Consulta
+        CALL consulta_bingo ()
+        
     ON ACTION salir
         EXIT MENU
 END MENU 
@@ -103,4 +107,7 @@ ELSE
     ROLLBACK WORK 
 END IF 
  
+END FUNCTION 
+
+FUNCTION consulta_bingo ()
 END FUNCTION 
