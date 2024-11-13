@@ -11,24 +11,34 @@
     <RecordField colName="nit" fieldIdRef="4" fieldType="TABLE_COLUMN" name="subsi15.nit" sqlTabName="subsi15" uid="{243c0438-04cb-4037-bbf2-9bf47b077d2c}"/>
     <RecordField colName="razsoc" fieldIdRef="5" fieldType="TABLE_COLUMN" name="subsi02.razsoc" sqlTabName="subsi02" uid="{ba70b30a-e55d-4fc4-be38-dd5f52b7f998}"/>
     <RecordField colName="codcat" fieldIdRef="6" fieldType="TABLE_COLUMN" name="subsi15.codcat" sqlTabName="subsi15" uid="{e2216bba-fea3-42a6-a83b-ae716ced037b}"/>
+    <RecordField colName="cupos" fieldIdRef="8" fieldType="TABLE_COLUMN" name="bingo_formulario.cupos" sqlTabName="bingo_formulario" uid="{19d58c5f-78b6-4a43-99d5-e632456b5e57}"/>
+    <RecordField colName="telefono" fieldIdRef="9" fieldType="TABLE_COLUMN" name="bingo_formulario.telefono" sqlTabName="bingo_formulario" uid="{d521b552-2a3f-41e4-b92a-bb45bea094fb}"/>
+    <RecordField colName="correo" fieldIdRef="10" fieldType="TABLE_COLUMN" name="bingo_formulario.correo" sqlTabName="bingo_formulario" uid="{19040076-5efa-406a-aaad-1e803acbc736}"/>
   </Record>
-  <Form gridHeight="25" gridWidth="88" name="form" text="Formulario Bingo">
-    <Grid gridHeight="24" gridWidth="86" name="grid1" posX="1" posY="0">
-      <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="BINGO COMFAORIENTE - SOLO BENEFICIOS"/>
+  <Form gridHeight="21" gridWidth="88" name="form" text="Formulario Bingo">
+    <Grid gridHeight="20" gridWidth="86" name="grid1" posX="1" posY="0">
+      <Label gridHeight="1" gridWidth="84" justify="center" name="label1" posX="1" posY="1" text="BINGO COMFAORIENTE - SOLO BENEFICIOS"/>
       <Label gridHeight="1" gridWidth="35" name="label2" posX="1" posY="3" text="SELECCIONE EL BINGO EN EL QUE DESEA PARTICIPAR:"/>
-      <ComboBox colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" name="bingo.idbingo" posX="46" posY="3" sqlTabName="bingo" tabIndex="-1" title="combobox1" widget="ComboBox"/>
+      <ComboBox colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" justify="right" name="bingo.idbingo" posX="46" posY="3" sqlTabName="bingo" tabIndex="-1" title="combobox1" widget="ComboBox"/>
       <Label gridHeight="1" gridWidth="35" name="label3" posX="1" posY="4" text="TIPO DE DOCUMENTO DEL AFILIADO:"/>
-      <ComboBox colName="coddoc" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" name="gener18.coddoc" posX="46" posY="4" sqlTabName="gener18" tabIndex="-1" title="combobox1" widget="ComboBox"/>
+      <ComboBox colName="coddoc" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" items="" justify="right" name="gener18.coddoc" posX="46" posY="4" sqlTabName="gener18" tabIndex="-1" title="combobox1" widget="ComboBox"/>
       <Label gridHeight="1" gridWidth="35" name="label4" posX="1" posY="5" text="NUMERO DE DOCUMENTO:"/>
-      <Edit colName="documentoafiliado" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" name="bingo_formulario.documentoafiliado" posX="46" posY="5" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
-      <Label gridHeight="1" gridWidth="35" name="label8" posX="2" posY="6" text="NOMBRE AFILIADO:"/>
-      <Edit fieldId="7" fieldType="NON_DATABASE" gridHeight="1" gridWidth="47" length="50" name="nombreAfiliado" posX="38" posY="6" sqlType="VARCHAR" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Edit colName="documentoafiliado" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" justify="right" name="bingo_formulario.documentoafiliado" posX="61" posY="5" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label8" posX="1" posY="6" text="NOMBRE AFILIADO:"/>
+      <Edit fieldId="7" fieldType="NON_DATABASE" gridHeight="1" gridWidth="47" justify="right" length="50" name="nombreAfiliado" noEntry="true" posX="38" posY="6" sqlType="VARCHAR" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="35" name="label5" posX="1" posY="7" text="NIT EMPRESA:"/>
-      <Edit colName="nit" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" name="subsi15.nit" noEntry="true" posX="46" posY="7" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Edit colName="nit" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="39" justify="right" name="subsi15.nit" noEntry="true" posX="46" posY="7" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="35" name="label6" posX="1" posY="8" text="NOMBRE EMPRESA: "/>
-      <Edit colName="razsoc" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="47" name="subsi02.razsoc" noEntry="true" posX="38" posY="8" sqlTabName="subsi02" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Edit colName="razsoc" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="47" justify="right" name="subsi02.razsoc" noEntry="true" posX="38" posY="8" sqlTabName="subsi02" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="35" name="label7" posX="1" posY="9" text="CATEGORIA DEL AFILIADO:"/>
-      <Edit colName="codcat" fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="21" name="subsi15.codcat" posX="64" posY="9" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Edit colName="codcat" fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" justify="right" name="subsi15.codcat" noEntry="true" posX="61" posY="9" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label9" posX="1" posY="10" text="CANTIDAD DE CARTONES A LOS QUE TIENE DERECHO:"/>
+      <Edit colName="cupos" fieldId="8" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" name="bingo_formulario.cupos" noEntry="true" posX="61" posY="10" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="84" justify="center" name="label12" posX="1" posY="12" text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!"/>
+      <Label gridHeight="1" gridWidth="35" name="label10" posX="1" posY="13" text="TELEFONO:"/>
+      <Edit colName="telefono" fieldId="9" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" justify="right" name="bingo_formulario.telefono" posX="61" posY="13" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="35" name="label11" posX="1" posY="14" text="CORREO ELECTRÓNICO:"/>
+      <Edit colName="correo" fieldId="10" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="33" justify="right" name="bingo_formulario.correo" posX="52" posY="14" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
     </Grid>
   </Form>
   <DiagramLayout>

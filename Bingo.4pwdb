@@ -57,7 +57,7 @@
 <Call c="14" l="19" n="consulta_bingo" t="F"/>
 </Fct>
 </File>
-<File m="b_formulario" n="b_formulario.4gl" ts="20241106120229673">
+<File m="b_formulario" n="b_formulario.4gl" ts="20241112095304915">
 <Fct c="10" el="71" l="33" n="adicionar_formulario()" t="F" v="pub">
 <Call c="14" l="48" n="fgl_winmessage" t="F"/>
 <Call c="14" l="54" n="fgl_winmessage" t="F"/>

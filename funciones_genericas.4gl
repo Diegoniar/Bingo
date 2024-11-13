@@ -126,3 +126,38 @@ END FOR
 DISPLAY "ES asi: ",ruta2
 RETURN ruta2
 END FUNCTION 
+
+FUNCTION oculta_campo(campo)
+DEFINE campo  STRING
+    ,w ui.WINDOW
+    ,f ui.FORM
+    
+    LET w = ui.Window.getCurrent()
+    LET f = w.getForm()
+    CALL f.setElementHidden(campo,1)
+    CALL f.setFieldHidden(campo,1)
+
+END FUNCTION
+
+FUNCTION muestra_campo(campo)
+DEFINE campo  STRING
+    ,w ui.WINDOW
+    ,f ui.FORM
+    
+    LET w = ui.Window.getCurrent()
+    LET f = w.getForm()
+    CALL f.setElementHidden(campo,0)
+    CALL f.setFieldHidden(campo,0)
+
+END FUNCTION
+
+FUNCTION mostrar_campos_telefono_email (campo1,campo2,campo3,campo4,campo5)
+DEFINE campo1,campo2,campo3,campo4,campo5 STRING 
+
+CALL muestra_campo(campo1)
+SLEEP 3
+CALL muestra_campo(campo2)
+CALL muestra_campo(campo3)
+CALL muestra_campo(campo4)
+CALL muestra_campo(campo5)
+END FUNCTION 

@@ -125,3 +125,76 @@ AND    subsi15.cedtra = documentoAfiliado
 
 RETURN nombreAfiliado
 END FUNCTION 
+
+FUNCTION Afiliado_ya_esta_en_el_bingo(idBingo, coddoc, documentoAfiliado)
+DEFINE coddoc            LIKE bingo_formulario.tipodocumento,
+       documentoAfiliado LIKE bingo_formulario.documentoafiliado,
+       idBingo           LIKE bingo.idbingo,
+       cont              INTEGER
+       
+LET cont = 0
+
+SELECT COUNT(*) INTO cont FROM bingo_formulario
+WHERE  bingo_formulario.tipodocumento     = coddoc
+AND    bingo_formulario.documentoafiliado = documentoAfiliado
+AND    bingo_formulario.idbingo           = idBingo
+
+IF cont > 0 THEN
+    CALL fgl_winmessage("Bingos Comfaoriente","El Afiliado ya se encuentra inscrito en el Bingo","stop")
+    RETURN FALSE
+ELSE
+    RETURN TRUE
+END IF 
+END FUNCTION 
+
+FUNCTION calcular_cupos(coddoc, documentoAfiliado)
+DEFINE coddoc            LIKE bingo_formulario.tipodocumento,
+       documentoAfiliado LIKE bingo_formulario.documentoafiliado,
+       cupos             INTEGER,
+       cont              INTEGER  
+
+LET cupos = 1
+
+LET cont = 0
+
+select count(*) INTO cont from subsi21, subsi20
+where  subsi21.cedcon     = subsi20.cedcon
+and    subsi21.cedtra     = documentoAfiliado
+and    subsi21.tipdoc_tra = coddoc
+and    subsi20.estado = "A"
+
+LET cupos = cupos + cont
+
+LET cont  = 0
+
+select COUNT(*) INTO cont from subsi23, subsi22
+where  subsi23.codben     = subsi22.codben
+and    subsi23.cedtra     = documentoAfiliado
+and    subsi23.tipdoc_tra = coddoc
+and    subsi22.estado     = "A"
+
+LET cupos = cupos + cont
+
+RETURN cupos
+END FUNCTION 
+
+FUNCTION traer_telefono(coddoc, documentoAfiliado)
+DEFINE coddoc            LIKE bingo_formulario.tipodocumento,
+       documentoAfiliado LIKE bingo_formulario.documentoafiliado,
+       telefono          LIKE subsi15.telefono,
+       correo            LIKE subsi15.email
+
+LET correo = ""
+LET telefono = ""
+
+SELECT subsi15.telefono, subsi15.email 
+INTO   telefono, correo
+FROM   subsi15
+WHERE  subsi15.cedtra = documentoAfiliado
+AND    subsi15.coddoc = coddoc
+
+LET correo = correo CLIPPED
+LET telefono = telefono CLIPPED 
+
+RETURN telefono, correo
+END FUNCTION 
