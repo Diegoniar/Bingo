@@ -105,18 +105,42 @@ AFTER FIELD correo
         IF NOT email_es_valido(r_formulario.correo) THEN
             CALL fgl_winmessage("Bingos Comfaoriente","El correo electrónico no es válido","stop")
             NEXT FIELD correo
+        ELSE
+            NEXT FIELD correo
         END IF 
     END IF 
 
-AFTER INPUT 
+ON ACTION ACCEPT  
+        IF NOT validar_input_formulario() THEN
+            CALL FGL_WINMESSAGE("Bingos Comfaoriente","CAMPOS OBLIGATORIOS ESTAN VACIOS","stop")
+            GO TO Ent_FORMULARIO
+        ELSE
+            IF registrar_formulario () THEN
+                CALL FGL_WINMESSAGE("Bingos Comfaoriente","REGISTRO EXITOSO Y ENVIO DE CARTONES AL CORREO EXITOSO","information")
+            ELSE
+                CALL FGL_WINMESSAGE("Bingos Comfaoriente","NO SE PUDO REALIZAR EL REGISTRO Y ENVIO","stop")
+            END IF 
+        END IF 
+
+ON ACTION CANCEL
+    EXIT INPUT 
+    CLEAR FORM
+    CALL FGL_WINMESSAGE("Bingos Comfaoriente","EL REGISTRO FUE CANCELADO","STOP")
+    MESSAGE ""
+    INITIALIZE r_formulario.* TO NULL
+    RETURN
+    
+AFTER INPUT
     IF int_flag THEN
       EXIT INPUT
     ELSE 
         IF NOT validar_input_formulario() THEN
             CALL FGL_WINMESSAGE("Bingos Comfaoriente","CAMPOS OBLIGATORIOS ESTAN VACIOS","stop")
             GO TO Ent_FORMULARIO
+        ELSE
+            CALL FGL_WINMESSAGE("Bingos Comfaoriente","ingreso OK","information")
         END IF 
-    END IF 
+    END IF    
 END INPUT 
 END FUNCTION 
 
@@ -157,4 +181,47 @@ ELSE
 END IF 
 
 RETURN TRUE 
+END FUNCTION 
+
+FUNCTION registrar_formulario ()
+DEFINE consec_form INTEGER,
+       priape      LIKE subsi15.priape,
+       segape      LIKE subsi15.segape,
+       nombre      LIKE subsi15.nombre,
+       codzon      LIKE subsi15.codzon
+
+BEGIN WORK
+WHENEVER ERROR CONTINUE
+SET LOCK MODE TO WAIT 
+
+CALL traer_consecutivo_formulario () RETURNING consec_form
+
+INSERT INTO bingo_formulario 
+(idformulario,tipodocumento,documentoafiliado,cupos,telefono,correo,idbingo)
+VALUES 
+(consec_form, r_formulario.coddoc, r_formulario.documentoAfiliado,r_formulario.cupos,
+r_formulario.telefono, r_formulario.correo, r_formulario.idBingo)
+
+IF status <> 0 THEN
+    DISPLAY "Error al guardar el formulario: ",SQLERRMESSAGE
+    ROLLBACK WORK 
+ELSE
+    IF NOT existe_afiliado_bingo (r_formulario.coddoc, r_formulario.documentoAfiliado) THEN
+        CALL datos_afiliado (r_formulario.coddoc, r_formulario.documentoAfiliado) RETURNING priape, segape,nombre,codzon
+        INSERT INTO bingo_afiliado (tipodocumento,documentoafiliado,priape,segape,nombre,
+                                    categoria,codigomunicipio,nit)
+                            VALUES (r_formulario.coddoc, r_formulario.documentoAfiliado,priape, segape,
+                                    nombre,r_formulario.codcat,codzon,r_formulario.nit)
+
+        IF status <> 0 THEN
+            DISPLAY "Error al guardar el afiliado: ",SQLERRMESSAGE
+            ROLLBACK WORK 
+        ELSE
+            COMMIT WORK 
+            
+        END IF 
+    END IF 
+END IF 
+
+RETURN TRUE         
 END FUNCTION 

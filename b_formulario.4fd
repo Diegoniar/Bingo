@@ -34,11 +34,15 @@
       <Edit colName="codcat" fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" justify="right" name="subsi15.codcat" noEntry="true" posX="61" posY="9" sqlTabName="subsi15" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="35" name="label9" posX="1" posY="10" text="CANTIDAD DE CARTONES A LOS QUE TIENE DERECHO:"/>
       <Edit colName="cupos" fieldId="8" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" name="bingo_formulario.cupos" noEntry="true" posX="61" posY="10" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
+      <HLine gridWidth="84" name="hline1" posX="1" posY="11"/>
       <Label gridHeight="1" gridWidth="84" justify="center" name="label12" posX="1" posY="12" text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!"/>
       <Label gridHeight="1" gridWidth="35" name="label10" posX="1" posY="13" text="NUMERO DE TELEFONO CELULAR:"/>
       <Edit colName="telefono" fieldId="9" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="24" justify="right" name="bingo_formulario.telefono" posX="61" posY="13" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="35" name="label11" posX="1" posY="14" text="CORREO ELECTRÓNICO:"/>
       <Edit colName="correo" fieldId="10" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="33" justify="right" name="bingo_formulario.correo" posX="52" posY="14" sqlTabName="bingo_formulario" tabIndex="-1" title="edit1" widget="Edit"/>
+      <HLine gridWidth="84" name="hline2" posX="1" posY="15"/>
+      <Button gridHeight="1" gridWidth="29" name="accept" posX="10" posY="16" tabIndex="-1" text="Registrarse y recibir Cartones al correo"/>
+      <Button gridHeight="1" gridWidth="29" name="cancel" posX="43" posY="16" tabIndex="-1" text="Cancelar"/>
     </Grid>
   </Form>
   <DiagramLayout>

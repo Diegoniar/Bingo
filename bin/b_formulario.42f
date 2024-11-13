@@ -53,6 +53,7 @@
     <FormField name="bingo_formulario.cupos" colName="cupos" sqlType="INTEGER" fieldId="7" sqlTabName="bingo_formulario" noEntry="1" tabIndex="8">
       <Edit width="24" posY="10" posX="61" gridWidth="24"/>
     </FormField>
+    <HLine posY="11" posX="1" gridWidth="84"/>
     <Label name="label12" width="84" text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!" justify="center" posY="12" posX="1" gridWidth="84">
       <LStr text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!"/>
     </Label>
@@ -68,6 +69,13 @@
     <FormField name="bingo_formulario.correo" colName="correo" sqlType="VARCHAR(100)" fieldId="9" sqlTabName="bingo_formulario" tabIndex="10">
       <Edit width="33" justify="right" posY="14" posX="52" gridWidth="33"/>
     </FormField>
+    <HLine posY="15" posX="1" gridWidth="84"/>
+    <Button name="accept" width="29" text="Registrarse y recibir Cartones al correo" posY="16" posX="10" gridWidth="29" tabIndex="11">
+      <LStr text="Registrarse y recibir Cartones al correo"/>
+    </Button>
+    <Button name="cancel" width="29" text="Cancelar" posY="16" posX="43" gridWidth="29" tabIndex="12">
+      <LStr text="Cancelar"/>
+    </Button>
   </Grid>
   <RecordView tabName="subsi02">
     <Link colName="razsoc" fieldIdRef="5"/>
