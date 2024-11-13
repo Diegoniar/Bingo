@@ -70,8 +70,8 @@ AFTER FIELD estado
         NEXT FIELD fechabingo
     END IF
 
-ON ACTION poster 
-    LET r_bingo.imagen = agregar_imagenes ()
+--ON ACTION poster 
+    --LET r_bingo.imagen = agregar_imagenes ()
 
 AFTER INPUT
     IF int_flag THEN

@@ -56,8 +56,8 @@
     <Label name="label12" width="84" text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!" justify="center" posY="12" posX="1" gridWidth="84">
       <LStr text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!"/>
     </Label>
-    <Label name="label10" width="35" text="TELEFONO:" posY="13" posX="1" gridWidth="35">
-      <LStr text="TELEFONO:"/>
+    <Label name="label10" width="35" text="NUMERO DE TELEFONO CELULAR:" posY="13" posX="1" gridWidth="35">
+      <LStr text="NUMERO DE TELEFONO CELULAR:"/>
     </Label>
     <FormField name="bingo_formulario.telefono" colName="telefono" sqlType="VARCHAR(20)" fieldId="8" sqlTabName="bingo_formulario" tabIndex="9">
       <Edit width="24" justify="right" posY="13" posX="61" gridWidth="24"/>

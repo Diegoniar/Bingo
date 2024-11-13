@@ -50,7 +50,7 @@ MESSAGE "ESTADO: ADICIÓN DE FORMULARIO"  ATTRIBUTE(BLUE)
 INITIALIZE r_formulario.* TO NULL
 lABEL Ent_formulario:
 
-INPUT BY NAME r_formulario.idBingo THRU r_formulario.documentoAfiliado WITHOUT DEFAULTS
+INPUT BY NAME r_formulario.idBingo THRU r_formulario.correo WITHOUT DEFAULTS
 AFTER FIELD idBingo
     IF r_formulario.idBingo IS NULL THEN
         CALL fgl_winmessage("Bingos Comfaoriente","No seleccionó un bingo","stop")
@@ -84,5 +84,77 @@ AFTER FIELD documentoAfiliado
             NEXT FIELD telefono
         END IF 
     END IF
+
+AFTER FIELD telefono
+    IF r_formulario.telefono IS NULL THEN
+        CALL fgl_winmessage("Bingos Comfaoriente","No digito un numero de telefono válido","stop")
+        NEXT FIELD telefono
+    ELSE
+        LET r_formulario.telefono = r_formulario.telefono CLIPPED 
+        IF NOT telefono_es_valido(r_formulario.telefono) THEN
+            NEXT FIELD telefono
+        END IF 
+    END IF 
+
+AFTER FIELD correo 
+    IF r_formulario.correo IS NULL THEN
+        CALL fgl_winmessage("Bingos Comfaoriente","No digito un correo electrónico válido","stop")
+        NEXT FIELD correo
+    ELSE
+        LET r_formulario.correo = r_formulario.correo CLIPPED 
+        IF NOT email_es_valido(r_formulario.correo) THEN
+            CALL fgl_winmessage("Bingos Comfaoriente","El correo electrónico no es válido","stop")
+            NEXT FIELD correo
+        END IF 
+    END IF 
+
+AFTER INPUT 
+    IF int_flag THEN
+      EXIT INPUT
+    ELSE 
+        IF NOT validar_input_formulario() THEN
+            CALL FGL_WINMESSAGE("Bingos Comfaoriente","CAMPOS OBLIGATORIOS ESTAN VACIOS","stop")
+            GO TO Ent_FORMULARIO
+        END IF 
+    END IF 
 END INPUT 
+END FUNCTION 
+
+FUNCTION validar_input_formulario()
+IF r_formulario.idBingo IS NULL THEN
+    RETURN FALSE 
+END IF 
+
+IF r_formulario.coddoc IS NULL THEN
+    RETURN FALSE
+END IF 
+
+IF r_formulario.documentoAfiliado IS NULL THEN
+    RETURN FALSE 
+ELSE
+    IF NOT existe_afiliado (r_formulario.coddoc, r_formulario.documentoAfiliado) AND 
+            Afiliado_ya_esta_en_el_bingo(r_formulario.idBingo,r_formulario.coddoc, r_formulario.documentoAfiliado) THEN
+        RETURN FALSE 
+    END IF 
+END IF
+
+IF r_formulario.telefono IS NULL THEN
+    RETURN FALSE 
+ELSE
+    LET r_formulario.telefono = r_formulario.telefono CLIPPED 
+    IF NOT telefono_es_valido(r_formulario.telefono) THEN
+        RETURN FALSE 
+    END IF 
+END IF 
+
+IF r_formulario.correo IS NULL THEN
+    RETURN FALSE 
+ELSE
+    LET r_formulario.correo = r_formulario.correo CLIPPED 
+    IF NOT email_es_valido(r_formulario.correo) THEN
+        RETURN FALSE 
+    END IF 
+END IF 
+
+RETURN TRUE 
 END FUNCTION 
