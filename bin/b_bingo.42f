@@ -5,11 +5,11 @@
     <Label name="label1" width="76" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE" justify="center" posY="1" posX="1" gridWidth="76">
       <LStr text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
     </Label>
-    <Label name="label2" width="9" text="BINGO N°" posY="3" posX="1" gridWidth="9">
+    <Label name="label2" width="14" text="BINGO N°" posY="3" posX="1" gridWidth="14">
       <LStr text="BINGO N°"/>
     </Label>
     <FormField name="bingo.idbingo" colName="idbingo" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="bingo" noEntry="1" tabIndex="1">
-      <Edit width="9" posY="3" posX="11" gridWidth="9"/>
+      <Edit width="9" posY="3" posX="16" gridWidth="9"/>
     </FormField>
     <Label name="label3" width="14" text="NOMBRE DEL BINGO:" posY="5" posX="1" gridWidth="14">
       <LStr text="NOMBRE DEL BINGO:"/>

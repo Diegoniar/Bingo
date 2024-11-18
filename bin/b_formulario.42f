@@ -9,19 +9,19 @@
       <LStr text="SELECCIONE EL BINGO EN EL QUE DESEA PARTICIPAR:"/>
     </Label>
     <FormField name="bingo.idbingo" colName="idbingo" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="bingo" tabIndex="1">
-      <ComboBox width="37" justify="right" posY="3" posX="46" gridWidth="39"/>
+      <ComboBox width="45" justify="right" posY="3" posX="38" gridWidth="47"/>
     </FormField>
     <Label name="label3" width="35" text="TIPO DE DOCUMENTO DEL AFILIADO:" posY="4" posX="1" gridWidth="35">
       <LStr text="TIPO DE DOCUMENTO DEL AFILIADO:"/>
     </Label>
     <FormField name="gener18.coddoc" colName="coddoc" sqlType="CHAR(2)" required="1" notNull="1" fieldId="1" sqlTabName="gener18" tabIndex="2">
-      <ComboBox width="37" justify="right" posY="4" posX="46" gridWidth="39"/>
+      <ComboBox width="45" justify="right" posY="4" posX="38" gridWidth="47"/>
     </FormField>
     <Label name="label4" width="35" text="NUMERO DE DOCUMENTO:" posY="5" posX="1" gridWidth="35">
       <LStr text="NUMERO DE DOCUMENTO:"/>
     </Label>
     <FormField name="bingo_formulario.documentoafiliado" colName="documentoafiliado" sqlType="VARCHAR(15)" fieldId="2" sqlTabName="bingo_formulario" tabIndex="3">
-      <Edit width="24" justify="right" posY="5" posX="61" gridWidth="24"/>
+      <Edit width="47" justify="right" posY="5" posX="38" gridWidth="47"/>
     </FormField>
     <Label name="label8" width="35" text="NOMBRE AFILIADO:" posY="6" posX="1" gridWidth="35">
       <LStr text="NOMBRE AFILIADO:"/>
@@ -33,7 +33,7 @@
       <LStr text="NIT EMPRESA:"/>
     </Label>
     <FormField name="subsi15.nit" colName="nit" sqlType="CHAR(14)" fieldId="4" sqlTabName="subsi15" noEntry="1" tabIndex="5">
-      <Edit width="39" justify="right" posY="7" posX="46" gridWidth="39"/>
+      <Edit width="47" justify="right" posY="7" posX="38" gridWidth="47"/>
     </FormField>
     <Label name="label6" width="35" text="NOMBRE EMPRESA: " posY="8" posX="1" gridWidth="35">
       <LStr text="NOMBRE EMPRESA: "/>
@@ -45,13 +45,13 @@
       <LStr text="CATEGORIA DEL AFILIADO:"/>
     </Label>
     <FormField name="subsi15.codcat" colName="codcat" sqlType="CHAR(1)" fieldId="6" sqlTabName="subsi15" noEntry="1" tabIndex="7">
-      <Edit width="24" justify="right" posY="9" posX="61" gridWidth="24"/>
+      <Edit width="47" justify="right" posY="9" posX="38" gridWidth="47"/>
     </FormField>
     <Label name="label9" width="35" text="CANTIDAD DE CARTONES A LOS QUE TIENE DERECHO:" posY="10" posX="1" gridWidth="35">
       <LStr text="CANTIDAD DE CARTONES A LOS QUE TIENE DERECHO:"/>
     </Label>
     <FormField name="bingo_formulario.cupos" colName="cupos" sqlType="INTEGER" fieldId="7" sqlTabName="bingo_formulario" noEntry="1" tabIndex="8">
-      <Edit width="24" posY="10" posX="61" gridWidth="24"/>
+      <Edit width="47" posY="10" posX="38" gridWidth="47"/>
     </FormField>
     <HLine posY="11" posX="1" gridWidth="84"/>
     <Label name="label12" width="84" text="Por favor, revisa que tu teléfono y correo electrónico sean correctos. Si deseas actualizarlos, ¡simplemente edítalos aquí!" justify="center" posY="12" posX="1" gridWidth="84">
@@ -61,13 +61,13 @@
       <LStr text="NUMERO DE TELEFONO CELULAR:"/>
     </Label>
     <FormField name="bingo_formulario.telefono" colName="telefono" sqlType="VARCHAR(20)" fieldId="8" sqlTabName="bingo_formulario" tabIndex="9">
-      <Edit width="24" justify="right" posY="13" posX="61" gridWidth="24"/>
+      <Edit width="47" justify="right" posY="13" posX="38" gridWidth="47"/>
     </FormField>
     <Label name="label11" width="35" text="CORREO ELECTRÓNICO:" posY="14" posX="1" gridWidth="35">
       <LStr text="CORREO ELECTRÓNICO:"/>
     </Label>
     <FormField name="bingo_formulario.correo" colName="correo" sqlType="VARCHAR(100)" fieldId="9" sqlTabName="bingo_formulario" tabIndex="10">
-      <Edit width="33" justify="right" posY="14" posX="52" gridWidth="33"/>
+      <Edit width="47" justify="right" posY="14" posX="38" gridWidth="47"/>
     </FormField>
     <HLine posY="15" posX="1" gridWidth="84"/>
     <Button name="accept" width="29" text="Registrarse y recibir Cartones al correo" posY="16" posX="10" gridWidth="29" tabIndex="11">
@@ -77,11 +77,11 @@
       <LStr text="Cancelar"/>
     </Button>
   </Grid>
-  <RecordView tabName="subsi02">
-    <Link colName="razsoc" fieldIdRef="5"/>
-  </RecordView>
-  <RecordView tabName="gener18">
-    <Link colName="coddoc" fieldIdRef="1"/>
+  <RecordView tabName="bingo_formulario">
+    <Link colName="documentoafiliado" fieldIdRef="2"/>
+    <Link colName="cupos" fieldIdRef="7"/>
+    <Link colName="telefono" fieldIdRef="8"/>
+    <Link colName="correo" fieldIdRef="9"/>
   </RecordView>
   <RecordView tabName="bingo">
     <Link colName="idbingo" fieldIdRef="0"/>
@@ -90,11 +90,11 @@
     <Link colName="nit" fieldIdRef="4"/>
     <Link colName="codcat" fieldIdRef="6"/>
   </RecordView>
-  <RecordView tabName="bingo_formulario">
-    <Link colName="documentoafiliado" fieldIdRef="2"/>
-    <Link colName="cupos" fieldIdRef="7"/>
-    <Link colName="telefono" fieldIdRef="8"/>
-    <Link colName="correo" fieldIdRef="9"/>
+  <RecordView tabName="subsi02">
+    <Link colName="razsoc" fieldIdRef="5"/>
+  </RecordView>
+  <RecordView tabName="gener18">
+    <Link colName="coddoc" fieldIdRef="1"/>
   </RecordView>
   <RecordView tabName="formonly">
     <Link colName="nombreafiliado" fieldIdRef="3"/>

@@ -72,11 +72,13 @@
       </VirtualFolder>
       <VirtualFolder label="modelo">
         <File filePath="b_bingo.4gl"/>
+        <File filePath="b_carton.4gl"/>
         <File filePath="b_formulario.4gl"/>
         <File filePath="b_main.4gl"/>
       </VirtualFolder>
       <VirtualFolder label="vista">
         <File filePath="b_bingo.4fd"/>
+        <File filePath="b_carton.4fd"/>
         <File filePath="b_formulario.4fd"/>
         <File filePath="b_main.4fd"/>
       </VirtualFolder>

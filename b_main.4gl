@@ -9,6 +9,9 @@ ON ACTION gestion_bingos
 
 ON ACTION formulario
     CALL abrir_formulario_principal ()
+
+ON ACTION Cartones
+    CALL bingo_cartones_principal()
     
 ON ACTION Salir
     EXIT MENU 

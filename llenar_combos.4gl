@@ -42,6 +42,7 @@ DECLARE c_bingo CURSOR FOR
 SELECT bingo.idBingo, bingo.nombreBingo
 FROM   bingo
 WHERE  bingo.estado = "A"
+AND    bingo.fechabingo >= TODAY 
 
 INITIALIZE r_bingo.* TO NULL
 

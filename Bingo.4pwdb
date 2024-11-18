@@ -51,7 +51,8 @@
 <Fct c="10" el="25" l="17" n="validar_fecha(fechabingo DATE)" t="F" v="pub"/>
 <Fct c="10" el="15" l="3" n="traer_consecutivo_bingo()" t="F" v="pub"/>
 </File>
-<File m="interaccion_bd" n="interaccion_bd.4gl" ts="20241114103714321">
+<File m="interaccion_bd" n="interaccion_bd.4gl" ts="20241118103053591">
+<Fct c="10" el="271" l="255" n="existe_beneficiario(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
 <Fct c="10" el="253" l="238" n="datos_afiliado(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
 <Fct c="10" el="236" l="219" n="existe_afiliado_bingo(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
 <Fct c="10" el="217" l="202" n="traer_consecutivo_formulario()" t="F" v="pub"/>
@@ -100,24 +101,34 @@
 <Call c="14" l="19" n="consulta_bingo" t="F"/>
 </Fct>
 </File>
-<File m="b_formulario" n="b_formulario.4gl" ts="20241115073810112">
-<Fct c="10" el="284" l="272" n="registrar_otros_beneficiarios()" t="F" v="pub"/>
-<Fct c="10" el="270" l="232" n="registro_beneficiarios()" t="F" v="pub">
-<Call c="14" l="264" n="registrar_otros_beneficiarios" t="F"/>
-<Call c="10" l="267" n="registrar_otros_beneficiarios" t="F"/>
+<File m="b_carton" n="b_carton.4gl" ts="20241118103053584">
+<Fct c="10" el="9" l="7" n="bingo_cartones_principal()" t="F" v="pub"/>
+</File>
+<File m="b_formulario" n="b_formulario.4gl" ts="20241118103053595">
+<Fct c="10" el="320" l="288" n="registrar_otros_beneficiarios()" t="F" v="pub">
+<Call c="12" l="305" n="existe_beneficiario" p="interaccion_bd.4gl" t="F"/>
 </Fct>
-<Fct c="10" el="230" l="189" n="registrar_formulario()" t="F" v="pub">
-<Call c="6" l="200" n="traer_consecutivo_formulario" p="interaccion_bd.4gl" t="F"/>
-<Call c="12" l="213" n="existe_afiliado_bingo" p="interaccion_bd.4gl" t="F"/>
-<Call c="14" l="214" n="datos_afiliado" p="interaccion_bd.4gl" t="F"/>
+<Fct c="10" el="286" l="248" n="registro_beneficiarios()" t="F" v="pub">
+<Call c="12" l="266" n="existe_beneficiario" p="interaccion_bd.4gl" t="F"/>
+<Call c="18" l="277" n="registrar_otros_beneficiarios" t="F"/>
+<Call c="14" l="280" n="registrar_otros_beneficiarios" t="F"/>
+<Call c="10" l="283" n="registrar_otros_beneficiarios" t="F"/>
 </Fct>
-<Fct c="10" el="187" l="150" n="validar_input_formulario()" t="F" v="pub">
-<Call c="12" l="162" n="existe_afiliado" p="interaccion_bd.4gl" t="F"/>
-<Call c="13" l="163" n="Afiliado_ya_esta_en_el_bingo" p="interaccion_bd.4gl" t="F"/>
-<Call c="12" l="172" n="telefono_es_valido" p="funciones_genericas.4gl" t="F"/>
-<Call c="12" l="181" n="email_es_valido" p="funciones_genericas.4gl" t="F"/>
+<Fct c="10" el="246" l="240" n="guardar_bingo_formulario()" t="F" v="pub"/>
+<Fct c="10" el="238" l="188" n="registrar_formulario()" t="F" v="pub">
+<Call c="6" l="199" n="traer_consecutivo_formulario" p="interaccion_bd.4gl" t="F"/>
+<Call c="8" l="202" n="existe_afiliado_bingo" p="interaccion_bd.4gl" t="F"/>
+<Call c="10" l="203" n="datos_afiliado" p="interaccion_bd.4gl" t="F"/>
+<Call c="14" l="214" n="guardar_bingo_formulario" t="F"/>
+<Call c="10" l="226" n="guardar_bingo_formulario" t="F"/>
 </Fct>
-<Fct c="10" el="148" l="41" n="adicionar_formulario()" t="F" v="pub">
+<Fct c="10" el="186" l="149" n="validar_input_formulario()" t="F" v="pub">
+<Call c="12" l="161" n="existe_afiliado" p="interaccion_bd.4gl" t="F"/>
+<Call c="13" l="162" n="Afiliado_ya_esta_en_el_bingo" p="interaccion_bd.4gl" t="F"/>
+<Call c="12" l="171" n="telefono_es_valido" p="funciones_genericas.4gl" t="F"/>
+<Call c="12" l="180" n="email_es_valido" p="funciones_genericas.4gl" t="F"/>
+</Fct>
+<Fct c="10" el="147" l="41" n="adicionar_formulario()" t="F" v="pub">
 <Call c="14" l="56" n="fgl_winmessage" t="F"/>
 <Call c="14" l="62" n="fgl_winmessage" t="F"/>
 <Call c="14" l="68" n="fgl_winmessage" t="F"/>
@@ -138,11 +149,11 @@
 <Call c="16" l="118" n="registrar_formulario" t="F"/>
 <Call c="22" l="119" n="registro_beneficiarios" t="F"/>
 <Call c="22" l="121" n="fgl_winmessage" t="F"/>
-<Call c="22" l="124" n="fgl_winmessage" t="F"/>
-<Call c="10" l="131" n="fgl_winmessage" t="F"/>
-<Call c="16" l="140" n="validar_input_formulario" t="F"/>
-<Call c="18" l="141" n="fgl_winmessage" t="F"/>
-<Call c="18" l="144" n="fgl_winmessage" t="F"/>
+<Call c="22" l="123" n="fgl_winmessage" t="F"/>
+<Call c="10" l="130" n="fgl_winmessage" t="F"/>
+<Call c="16" l="139" n="validar_input_formulario" t="F"/>
+<Call c="18" l="140" n="fgl_winmessage" t="F"/>
+<Call c="18" l="143" n="fgl_winmessage" t="F"/>
 </Fct>
 <Fct c="10" el="39" l="16" n="abrir_formulario_principal()" t="F" v="pub">
 <Call c="6" l="22" n="oculta_campo" p="funciones_genericas.4gl" t="F"/>
@@ -155,7 +166,7 @@
 <Call c="14" l="34" n="adicionar_formulario" t="F"/>
 </Fct>
 </File>
-<File m="b_main" n="b_main.4gl" ts="20241106080734101">
+<File m="b_main" n="b_main.4gl" ts="20241118103053588">
 <Fct c="1" el="18" l="3" n="main()" t="F" v="pub">
 <Call c="10" l="8" n="b_bingo_main" p="b_bingo.4gl" t="F"/>
 <Call c="10" l="11" n="abrir_formulario_principal" p="b_formulario.4gl" t="F"/>

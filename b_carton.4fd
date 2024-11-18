@@ -7,6 +7,11 @@
     <RecordField colName="idbingo" fieldIdRef="1" fieldType="TABLE_COLUMN" name="bingo.idbingo" sqlTabName="bingo" uid="{4d31aa86-81a8-48e3-ac32-4f5b078a874a}"/>
   </Record>
   <Form gridHeight="8" gridWidth="80" name="form" text="Form">
+    <ToolBar name="toolbar1">
+      <ToolBarItem image="carton" name="sel_bingo" text="Seleccionar Bingo"/>
+      <ToolBarSeparator name="toolbarseparator1"/>
+      <ToolBarItem image="salir" name="salir" text="Salir"/>
+    </ToolBar>
     <Grid gridHeight="7" gridWidth="78" name="grid1" posX="1" posY="0">
       <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="CARGA DE NOMBRE DE ARCHIVO DE LOS CARTONES - BINGO COMFAORIENTE"/>
       <Label gridHeight="1" gridWidth="15" name="label2" posX="13" posY="3" text="NOMBRE DEL BINGO"/>

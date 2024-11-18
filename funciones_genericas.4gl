@@ -386,3 +386,22 @@ FOR i = 1 TO email.getLength()
 END FOR 
 RETURN TRUE     
 END FUNCTION 
+
+FUNCTION  traer_ruta_carga ()
+DEFINE mrut   STRING, 
+       mruta  STRING,
+       mruta2 STRING
+
+CALL WINOPENFILE( "C:\\",mrut,"*.txt *.csv", "SELECCIONE EL DOCUMENTO CON LA LISTA DE CARTONES") returning mruta
+
+Let mruta2 =fgl_getenv("HOME"),"/pruebas_diego","/",mruta
+
+TRY
+   CALL FGL_GETFILE(mruta , mruta2)
+   DISPLAY mruta2
+CATCH 
+   ERROR status 
+END TRY 
+
+RETURN mruta2
+END FUNCTION 

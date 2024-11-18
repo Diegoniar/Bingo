@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<Form name="b_carton.tmp" build="3.10.18" sqlDbName="empresa" text="Form" width="78" height="7">
+  <ToolBar name="toolbar1">
+    <ToolBarItem name="sel_bingo" image="carton" text="Seleccionar Bingo">
+      <LStr text="Seleccionar Bingo"/>
+    </ToolBarItem>
+    <ToolBarSeparator name="toolbarseparator1"/>
+    <ToolBarItem name="salir" image="salir" text="Salir">
+      <LStr text="Salir"/>
+    </ToolBarItem>
+  </ToolBar>
+  <LStr text="Form"/>
+  <Grid name="grid1" width="78" height="7">
+    <Label name="label1" width="76" text="CARGA DE NOMBRE DE ARCHIVO DE LOS CARTONES - BINGO COMFAORIENTE" justify="center" posY="1" posX="1" gridWidth="76">
+      <LStr text="CARGA DE NOMBRE DE ARCHIVO DE LOS CARTONES - BINGO COMFAORIENTE"/>
+    </Label>
+    <Label name="label2" width="15" text="NOMBRE DEL BINGO" posY="3" posX="13" gridWidth="15">
+      <LStr text="NOMBRE DEL BINGO"/>
+    </Label>
+    <FormField name="bingo.idbingo" colName="idbingo" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="bingo" tabIndex="1">
+      <ComboBox width="34" posY="3" posX="29" gridWidth="36"/>
+    </FormField>
+    <Button name="cargar_cartones" width="38" text="CARGAR LISTA DE ARCHIVOS DEL BINGO" posY="5" posX="20" gridWidth="38" tabIndex="2">
+      <LStr text="CARGAR LISTA DE ARCHIVOS DEL BINGO"/>
+    </Button>
+  </Grid>
+  <RecordView tabName="bingo">
+    <Link colName="idbingo" fieldIdRef="0"/>
+  </RecordView>
+  <RecordView tabName="undefined">
+    <Link colName="idbingo" fieldIdRef="0"/>
+  </RecordView>
+</Form>

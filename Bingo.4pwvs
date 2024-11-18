@@ -10,7 +10,7 @@
     <Node path="Bingo.4pw/Group/Databases" type="pm/library"/>
   </ExpandedNodes>
   <OpenDocuments>
-    <Document container="true" filePath="b_main.4gl" locator="11:39" module="mod-ce3">
+    <Document container="true" filePath="b_main.4gl" locator="11:28" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
     <Document container="true" filePath="llenar_combos.4gl" locator="7:46" module="mod-ce3">
@@ -21,9 +21,17 @@
     </Document>
     <Document container="true" filePath="b_bingo.4fd" locator="" module="mod-fd"/>
     <Document container="true" filePath="b_main.4fd" locator="" module="mod-fd"/>
-    <Document container="true" filePath="interaccion_bd.4gl" locator="250:53" module="mod-ce3">
+    <Document container="true" filePath="interaccion_bd.4gl" locator="273:1" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="b_formulario.4gl" locator="32:1:38:25" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="b_formulario.4fd" locator="" module="mod-fd"/>
+    <Document container="true" filePath="b_carton.4fd" locator="" module="mod-fd"/>
+    <Document container="true" filePath="b_carton.4gl" locator="17:22" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
   </OpenDocuments>
-  <CurrentDocument filePath="b_bingo.4gl" module="mod-ce3"/>
+  <CurrentDocument filePath="b_carton.4gl" module="mod-ce3"/>
 </WorkspaceViewState>

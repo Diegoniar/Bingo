@@ -216,6 +216,23 @@ END IF
 RETURN consec
 END FUNCTION 
 
+FUNCTION traer_consecutivo_cartones ()
+DEFINE consec INTEGER
+
+LET consec = 0
+
+SELECT MAX(idCarton) INTO consec 
+FROM bingo_carton
+
+IF consec = 0 OR consec IS NULL THEN
+    LET consec = 1
+ELSE
+    LET consec = consec + 1
+END IF 
+
+RETURN consec
+END FUNCTION 
+
 FUNCTION existe_afiliado_bingo (coddoc, documentoAfiliado)
 DEFINE coddoc            LIKE bingo_formulario.tipodocumento,
        documentoAfiliado LIKE bingo_formulario.documentoafiliado,
@@ -268,5 +285,19 @@ IF cont > 0 THEN
 ELSE
     RETURN FALSE 
 END IF 
+END FUNCTION 
+
+FUNCTION existe_carton (nombre_carton, numero_carton)
+DEFINE nombre_carton LIKE bingo_carton.rutacarton,
+       cont          INTEGER,
+       numero_carton INTEGER  
+
+LET cont = 0
+
+SELECT COUNT (*) INTO cont FROM bingo_carton
+WHERE bingo_carton.idBingo    = numero_carton
+AND   bingo_carton.rutacarton = nombre_carton 
+
+RETURN cont 
 END FUNCTION 
 

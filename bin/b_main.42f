@@ -7,6 +7,9 @@
     <ToolBarItem name="formulario" image="icono_formulario" text="Formularios">
       <LStr text="Formularios"/>
     </ToolBarItem>
+    <ToolBarItem name="cartones" image="carton" text="Cartones">
+      <LStr text="Cartones"/>
+    </ToolBarItem>
     <ToolBarSeparator name="toolbarseparator1"/>
     <ToolBarItem name="salir" image="icono_exit" text="Salir">
       <LStr text="Salir"/>

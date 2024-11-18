@@ -7,6 +7,7 @@
     <ToolBar name="toolbar1">
       <ToolBarItem image="icono_bingo" name="gestion_bingos" text="Gestión Bingos"/>
       <ToolBarItem image="icono_formulario" name="formulario" text="Formularios"/>
+      <ToolBarItem image="carton" name="Cartones" text="Cartones"/>
       <ToolBarSeparator name="toolbarseparator1"/>
       <ToolBarItem image="icono_exit" name="salir" text="Salir"/>
     </ToolBar>
