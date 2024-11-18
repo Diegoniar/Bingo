@@ -247,7 +247,26 @@ SELECT subsi15.priape, subsi15.segape, subsi15.nombre, subsi15.codzon
 INTO   priape, segape, nombre, codzon
 FROM   subsi15
 WHERE  subsi15.coddoc = coddoc
-AND    subsi15.documentoAfiliado = documentoAfiliado
+AND    subsi15.cedtra = documentoAfiliado
        
 RETURN priape, segape,nombre,codzon
 END FUNCTION  
+
+FUNCTION existe_beneficiario(coddoc, documentoAfiliado)
+DEFINE coddoc            LIKE bingo_formulario.tipodocumento,
+       documentoAfiliado LIKE bingo_formulario.documentoafiliado,
+       cont              INTEGER 
+
+LET cont = 0
+
+SELECT COUNT(*) INTO cont FROM bingo_beneficiario
+WHERE bingo_beneficiario.tipodocumento         = coddoc
+AND   bingo_beneficiario.documentobeneficiario = documentoAfiliado 
+
+IF cont > 0 THEN
+    RETURN TRUE
+ELSE
+    RETURN FALSE 
+END IF 
+END FUNCTION 
+

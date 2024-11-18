@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <WorkspaceDatabase fileContentsEncoding="iso88591" version="2.0">
-<File m="funciones_genericas" n="funciones_genericas.4gl" ts="20241105161140362">
+<File m="funciones_genericas" n="funciones_genericas.4gl" ts="20241114103714317">
+<Fct c="10" el="388" l="378" n="hay_ene(email STRING)" t="F" v="pub"/>
+<Fct c="10" el="376" l="362" n="contar_arrobas(correo STRING)" t="F" v="pub"/>
+<Fct c="10" el="360" l="339" n="separar_usuario_dominio(correo STRING)" t="F" v="pub"/>
+<Fct c="10" el="337" l="306" n="devolver_indices_puntos(dominio STRING,cont INTEGER)" t="F" v="pub"/>
+<Fct c="10" el="304" l="267" n="examen_dominio(dominio STRING,cont INTEGER)" t="F" v="pub">
+<Call c="6" l="282" n="devolver_indices_puntos" t="F"/>
+</Fct>
+<Fct c="10" el="265" l="239" n="hay_un_punto(dominio STRING)" t="F" v="pub">
+<Call c="8" l="260" n="examen_dominio" t="F"/>
+</Fct>
+<Fct c="10" el="237" l="211" n="email_es_valido(correo STRING)" t="F" v="pub">
+<Call c="8" l="216" n="hay_ene" t="F"/>
+<Call c="5" l="220" n="contar_arrobas" t="F"/>
+<Call c="6" l="226" n="separar_usuario_dominio" t="F"/>
+<Call c="8" l="232" n="hay_un_punto" t="F"/>
+</Fct>
+<Fct c="10" el="209" l="199" n="sin_letra_ni_simbolos(a CHAR(1))" t="F" v="pub"/>
+<Fct c="10" el="197" l="185" n="solo_es_numero(telefono STRING)" t="F" v="pub">
+<Call c="12" l="190" n="sin_letra_ni_simbolos" t="F"/>
+<Call c="14" l="191" n="fgl_winmessage" t="F"/>
+</Fct>
+<Fct c="10" el="183" l="164" n="telefono_es_valido(telefono unknown)" t="F" v="pub">
+<Call c="10" l="168" n="fgl_winmessage" t="F"/>
+<Call c="12" l="172" n="solo_es_numero" t="F"/>
+<Call c="14" l="178" n="fgl_winmessage" t="F"/>
+</Fct>
+<Fct c="10" el="162" l="154" n="mostrar_campos_telefono_email(campo1 STRING,campo2 STRING,campo3 STRING,campo4 STRING,campo5 STRING)" t="F" v="pub">
+<Call c="6" l="157" n="muestra_campo" t="F"/>
+<Call c="6" l="158" n="muestra_campo" t="F"/>
+<Call c="6" l="159" n="muestra_campo" t="F"/>
+<Call c="6" l="160" n="muestra_campo" t="F"/>
+<Call c="6" l="161" n="muestra_campo" t="F"/>
+</Fct>
+<Fct c="10" el="152" l="142" n="muestra_campo(campo STRING)" t="F" v="pub"/>
+<Fct c="10" el="140" l="130" n="oculta_campo(campo STRING)" t="F" v="pub"/>
 <Fct c="10" el="128" l="114" n="quitar_espacios(ruta STRING)" t="F" v="pub"/>
 <Fct c="10" el="112" l="93" n="retorna_extension(mruta2 STRING)" t="F" v="pub"/>
 <Fct c="10" el="91" l="79" n="longitud_sin_punto(ruta STRING)" t="F" v="pub"/>
@@ -16,7 +51,16 @@
 <Fct c="10" el="25" l="17" n="validar_fecha(fechabingo DATE)" t="F" v="pub"/>
 <Fct c="10" el="15" l="3" n="traer_consecutivo_bingo()" t="F" v="pub"/>
 </File>
-<File m="interaccion_bd" n="interaccion_bd.4gl" ts="20241106120229667">
+<File m="interaccion_bd" n="interaccion_bd.4gl" ts="20241114103714321">
+<Fct c="10" el="253" l="238" n="datos_afiliado(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
+<Fct c="10" el="236" l="219" n="existe_afiliado_bingo(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
+<Fct c="10" el="217" l="202" n="traer_consecutivo_formulario()" t="F" v="pub"/>
+<Fct c="10" el="200" l="181" n="traer_telefono(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
+<Fct c="10" el="179" l="150" n="calcular_cupos(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
+<Fct c="10" el="148" l="129" n="Afiliado_ya_esta_en_el_bingo(idBingo unknown,coddoc unknown,documentoAfiliado unknown)" t="F" v="pub">
+<Call c="10" l="143" n="fgl_winmessage" t="F"/>
+</Fct>
+<Fct c="10" el="127" l="113" n="traer_nombre_afiliado(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
 <Fct c="10" el="111" l="90" n="traer_empresa(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub"/>
 <Fct c="10" el="88" l="70" n="es_categoria_a_b(coddoc unknown,documentoAfiliado unknown)" t="F" v="pub">
 <Call c="10" l="84" n="fgl_winmessage" t="F"/>
@@ -37,7 +81,7 @@
 <Fct c="10" el="55" l="30" n="llenar_combo_bingo()" t="F" v="pub"/>
 <Fct c="10" el="28" l="3" n="llenar_combo_tipo_documento()" t="F" v="pub"/>
 </File>
-<File m="b_bingo" n="b_bingo.4gl" ts="20241106111919282">
+<File m="b_bingo" n="b_bingo.4gl" ts="20241114103714312">
 <Fct c="10" el="113" l="112" n="consulta_bingo()" t="F" v="pub"/>
 <Fct c="10" el="110" l="27" n="adicionar_bingo()" t="F" v="pub">
 <Call c="27" l="43" n="traer_consecutivo_bingo" p="funciones_genericas.4gl" t="F"/>
@@ -46,7 +90,6 @@
 <Call c="16" l="59" n="validar_fecha" p="funciones_genericas.4gl" t="F"/>
 <Call c="18" l="60" n="fgl_winmessage" t="F"/>
 <Call c="14" l="69" n="fgl_winmessage" t="F"/>
-<Call c="26" l="74" n="agregar_imagenes" p="funciones_genericas.4gl" t="F"/>
 <Call c="18" l="83" n="fgl_winmessage" t="F"/>
 <Call c="12" l="91" n="fgl_winmessage" t="F"/>
 <Call c="4" l="103" n="guardar_bingo" p="interaccion_bd.4gl" t="F"/>
@@ -57,18 +100,59 @@
 <Call c="14" l="19" n="consulta_bingo" t="F"/>
 </Fct>
 </File>
-<File m="b_formulario" n="b_formulario.4gl" ts="20241112095304915">
-<Fct c="10" el="71" l="33" n="adicionar_formulario()" t="F" v="pub">
-<Call c="14" l="48" n="fgl_winmessage" t="F"/>
-<Call c="14" l="54" n="fgl_winmessage" t="F"/>
-<Call c="14" l="60" n="fgl_winmessage" t="F"/>
-<Call c="16" l="63" n="existe_afiliado" p="interaccion_bd.4gl" t="F"/>
-<Call c="18" l="66" n="traer_empresa" p="interaccion_bd.4gl" t="F"/>
+<File m="b_formulario" n="b_formulario.4gl" ts="20241115073810112">
+<Fct c="10" el="284" l="272" n="registrar_otros_beneficiarios()" t="F" v="pub"/>
+<Fct c="10" el="270" l="232" n="registro_beneficiarios()" t="F" v="pub">
+<Call c="14" l="264" n="registrar_otros_beneficiarios" t="F"/>
+<Call c="10" l="267" n="registrar_otros_beneficiarios" t="F"/>
 </Fct>
-<Fct c="10" el="31" l="12" n="abrir_formulario_principal()" t="F" v="pub">
-<Call c="16" l="21" n="llenar_combo_bingo" p="llenar_combos.4gl" t="F"/>
-<Call c="16" l="22" n="llenar_combo_tipo_documento" p="llenar_combos.4gl" t="F"/>
-<Call c="14" l="26" n="adicionar_formulario" t="F"/>
+<Fct c="10" el="230" l="189" n="registrar_formulario()" t="F" v="pub">
+<Call c="6" l="200" n="traer_consecutivo_formulario" p="interaccion_bd.4gl" t="F"/>
+<Call c="12" l="213" n="existe_afiliado_bingo" p="interaccion_bd.4gl" t="F"/>
+<Call c="14" l="214" n="datos_afiliado" p="interaccion_bd.4gl" t="F"/>
+</Fct>
+<Fct c="10" el="187" l="150" n="validar_input_formulario()" t="F" v="pub">
+<Call c="12" l="162" n="existe_afiliado" p="interaccion_bd.4gl" t="F"/>
+<Call c="13" l="163" n="Afiliado_ya_esta_en_el_bingo" p="interaccion_bd.4gl" t="F"/>
+<Call c="12" l="172" n="telefono_es_valido" p="funciones_genericas.4gl" t="F"/>
+<Call c="12" l="181" n="email_es_valido" p="funciones_genericas.4gl" t="F"/>
+</Fct>
+<Fct c="10" el="148" l="41" n="adicionar_formulario()" t="F" v="pub">
+<Call c="14" l="56" n="fgl_winmessage" t="F"/>
+<Call c="14" l="62" n="fgl_winmessage" t="F"/>
+<Call c="14" l="68" n="fgl_winmessage" t="F"/>
+<Call c="16" l="71" n="existe_afiliado" p="interaccion_bd.4gl" t="F"/>
+<Call c="16" l="72" n="Afiliado_ya_esta_en_el_bingo" p="interaccion_bd.4gl" t="F"/>
+<Call c="18" l="75" n="traer_nombre_afiliado" p="interaccion_bd.4gl" t="F"/>
+<Call c="18" l="76" n="traer_empresa" p="interaccion_bd.4gl" t="F"/>
+<Call c="18" l="77" n="calcular_cupos" p="interaccion_bd.4gl" t="F"/>
+<Call c="18" l="78" n="traer_telefono" p="interaccion_bd.4gl" t="F"/>
+<Call c="18" l="83" n="mostrar_campos_telefono_email" p="funciones_genericas.4gl" t="F"/>
+<Call c="14" l="90" n="fgl_winmessage" t="F"/>
+<Call c="16" l="94" n="telefono_es_valido" p="funciones_genericas.4gl" t="F"/>
+<Call c="14" l="101" n="fgl_winmessage" t="F"/>
+<Call c="16" l="105" n="email_es_valido" p="funciones_genericas.4gl" t="F"/>
+<Call c="18" l="106" n="fgl_winmessage" t="F"/>
+<Call c="16" l="114" n="validar_input_formulario" t="F"/>
+<Call c="18" l="115" n="fgl_winmessage" t="F"/>
+<Call c="16" l="118" n="registrar_formulario" t="F"/>
+<Call c="22" l="119" n="registro_beneficiarios" t="F"/>
+<Call c="22" l="121" n="fgl_winmessage" t="F"/>
+<Call c="22" l="124" n="fgl_winmessage" t="F"/>
+<Call c="10" l="131" n="fgl_winmessage" t="F"/>
+<Call c="16" l="140" n="validar_input_formulario" t="F"/>
+<Call c="18" l="141" n="fgl_winmessage" t="F"/>
+<Call c="18" l="144" n="fgl_winmessage" t="F"/>
+</Fct>
+<Fct c="10" el="39" l="16" n="abrir_formulario_principal()" t="F" v="pub">
+<Call c="6" l="22" n="oculta_campo" p="funciones_genericas.4gl" t="F"/>
+<Call c="6" l="23" n="oculta_campo" p="funciones_genericas.4gl" t="F"/>
+<Call c="6" l="24" n="oculta_campo" p="funciones_genericas.4gl" t="F"/>
+<Call c="6" l="25" n="oculta_campo" p="funciones_genericas.4gl" t="F"/>
+<Call c="6" l="26" n="oculta_campo" p="funciones_genericas.4gl" t="F"/>
+<Call c="16" l="29" n="llenar_combo_bingo" p="llenar_combos.4gl" t="F"/>
+<Call c="16" l="30" n="llenar_combo_tipo_documento" p="llenar_combos.4gl" t="F"/>
+<Call c="14" l="34" n="adicionar_formulario" t="F"/>
 </Fct>
 </File>
 <File m="b_main" n="b_main.4gl" ts="20241106080734101">

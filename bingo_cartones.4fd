@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="empresa" fileVersion="30a00" gstVersion="30a0b" name="managedform" uid="{8c02d07e-b582-496f-a891-153ae767bbfc}">
+  <AGSettings>
+    <DynamicProperties version="2"/>
+  </AGSettings>
+  <Record name="Undefined" uid="{e33ed0fb-0739-4403-977b-8dc45c973ba1}">
+    <RecordField colName="idbingo" fieldIdRef="1" fieldType="TABLE_COLUMN" name="bingo.idbingo" sqlTabName="bingo" uid="{4d31aa86-81a8-48e3-ac32-4f5b078a874a}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="80" name="form" text="Form">
+    <Grid gridHeight="7" gridWidth="78" name="grid1" posX="1" posY="0">
+      <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="CARGA DE NOMBRE DE ARCHIVO DE LOS CARTONES - BINGO COMFAORIENTE"/>
+      <Label gridHeight="1" gridWidth="15" name="label2" posX="13" posY="3" text="NOMBRE DEL BINGO"/>
+      <ComboBox colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="36" items="" name="bingo.idbingo" posX="29" posY="3" sqlTabName="bingo" tabIndex="-1" title="combobox1" widget="ComboBox"/>
+      <Button gridHeight="1" gridWidth="38" name="cargar_cartones" posX="20" posY="5" tabIndex="-1" text="CARGAR LISTA DE ARCHIVOS DEL BINGO"/>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBlADMAMwBlAGQAMABmAGIALQAwADcAMwA5AC0ANAA0ADAAMwAtADkANwA3AGIALQA4AGQAYwA0ADUAYwA5ADcAMwBiAGEAMQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

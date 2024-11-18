@@ -12,8 +12,8 @@
   <Form gridHeight="10" gridWidth="80" name="form" text="Form">
     <Grid gridHeight="9" gridWidth="78" name="grid1" posX="1" posY="0">
       <Label gridHeight="1" gridWidth="76" justify="center" name="label1" posX="1" posY="1" text="ADMINISTRACIÓN DE BINGOS COMFAORIENTE"/>
-      <Label gridHeight="1" gridWidth="9" name="label2" posX="1" posY="3" text="BINGO N°"/>
-      <Edit colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="9" name="bingo.idbingo" noEntry="true" posX="11" posY="3" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="14" name="label2" posX="1" posY="3" text="BINGO N°"/>
+      <Edit colName="idbingo" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="9" name="bingo.idbingo" noEntry="true" posX="16" posY="3" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="14" name="label3" posX="1" posY="5" text="NOMBRE DEL BINGO:"/>
       <Edit case="upper" colName="nombrebingo" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="61" name="bingo.nombrebingo" posX="16" posY="5" sqlTabName="bingo" tabIndex="-1" title="edit1" widget="Edit"/>
       <Label gridHeight="1" gridWidth="14" name="label4" posX="1" posY="7" text="FECHA DEL BINGO:"/>
