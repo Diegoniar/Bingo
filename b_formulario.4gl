@@ -68,20 +68,21 @@ AFTER FIELD documentoAfiliado
         CALL fgl_winmessage("Bingos Comfaoriente","No digitó ningún documento","stop")
         NEXT FIELD documentoAfiliado
     ELSE
-        IF NOT existe_afiliado (r_formulario.coddoc, r_formulario.documentoAfiliado) AND 
-               Afiliado_ya_esta_en_el_bingo(r_formulario.idBingo,r_formulario.coddoc, r_formulario.documentoAfiliado) THEN
-            NEXT FIELD coddoc
-        ELSE
-            CALL traer_nombre_afiliado(r_formulario.coddoc, r_formulario.documentoAfiliado) RETURNING r_formulario.nombreAfiliado
-            CALL traer_empresa(r_formulario.coddoc, r_formulario.documentoAfiliado)         RETURNING r_formulario.nit, r_formulario.razsoc, r_formulario.codcat
-            CALL calcular_cupos(r_formulario.coddoc, r_formulario.documentoAfiliado)        RETURNING r_formulario.cupos
-            CALL traer_telefono(r_formulario.coddoc, r_formulario.documentoAfiliado)        RETURNING r_formulario.telefono, r_formulario.correo
-            
-            DISPLAY BY NAME r_formulario.nit, r_formulario.razsoc, r_formulario.codcat, r_formulario.nombreAfiliado,
-                            r_formulario.cupos,r_formulario.telefono, r_formulario.correo
+        IF existe_afiliado (r_formulario.coddoc, r_formulario.documentoAfiliado)  THEN
+            IF NOT Afiliado_ya_esta_en_el_bingo(r_formulario.idBingo,r_formulario.coddoc, r_formulario.documentoAfiliado) THEN 
+                NEXT FIELD coddoc
+            ELSE
+                CALL traer_nombre_afiliado(r_formulario.coddoc, r_formulario.documentoAfiliado) RETURNING r_formulario.nombreAfiliado
+                CALL traer_empresa(r_formulario.coddoc, r_formulario.documentoAfiliado)         RETURNING r_formulario.nit, r_formulario.razsoc, r_formulario.codcat
+                CALL calcular_cupos(r_formulario.coddoc, r_formulario.documentoAfiliado)        RETURNING r_formulario.cupos
+                CALL traer_telefono(r_formulario.coddoc, r_formulario.documentoAfiliado)        RETURNING r_formulario.telefono, r_formulario.correo
+                
+                DISPLAY BY NAME r_formulario.nit, r_formulario.razsoc, r_formulario.codcat, r_formulario.nombreAfiliado,
+                                r_formulario.cupos,r_formulario.telefono, r_formulario.correo
 
-            CALL mostrar_campos_telefono_email ("label10","label11","label12","telefono","correo")
-            NEXT FIELD telefono
+                CALL mostrar_campos_telefono_email ("label10","label11","label12","telefono","correo")
+                NEXT FIELD telefono
+            END IF 
         END IF 
     END IF
 
@@ -117,7 +118,7 @@ ON ACTION ACCEPT
         ELSE
             IF registrar_formulario () THEN
                 CALL registro_beneficiarios () 
-                
+                CALL envio_cartones()
                 CALL FGL_WINMESSAGE("Bingos Comfaoriente","REGISTRO EXITOSO Y ENVIO DE CARTONES AL CORREO EXITOSO","information")
             ELSE
                 CALL FGL_WINMESSAGE("Bingos Comfaoriente","NO SE PUDO REALIZAR EL REGISTRO Y ENVIO","stop")
@@ -139,6 +140,7 @@ AFTER INPUT
         IF NOT validar_input_formulario() THEN
             CALL FGL_WINMESSAGE("Bingos Comfaoriente","CAMPOS OBLIGATORIOS ESTAN VACIOS","stop")
             GO TO Ent_FORMULARIO
+        
         ELSE
             CALL FGL_WINMESSAGE("Bingos Comfaoriente","ingreso OK","information")
         END IF 
@@ -211,7 +213,7 @@ IF NOT existe_afiliado_bingo (r_formulario.coddoc, r_formulario.documentoAfiliad
         ROLLBACK WORK 
         RETURN FALSE 
     ELSE
-        CALL guardar_bingo_formulario()
+        CALL guardar_bingo_formulario(consec_form)
 
         IF status <> 0 THEN
             DISPLAY "Error al guardar el formulario: ",SQLERRMESSAGE
@@ -223,7 +225,7 @@ IF NOT existe_afiliado_bingo (r_formulario.coddoc, r_formulario.documentoAfiliad
         END IF 
     END IF 
 ELSE
-    CALL guardar_bingo_formulario()
+    CALL guardar_bingo_formulario(consec_form)
     
     IF status <> 0 THEN
         DISPLAY "Error al guardar el formulario: ",SQLERRMESSAGE
@@ -237,7 +239,8 @@ END IF
        
 END FUNCTION
 
-FUNCTION guardar_bingo_formulario()
+FUNCTION guardar_bingo_formulario(consec_form)
+DEFINE consec_form LIKE bingo_formulario.idformulario
 INSERT INTO bingo_formulario 
         (idformulario,tipodocumento,documentoafiliado,cupos,telefono,correo,idbingo)
         VALUES 
@@ -318,3 +321,72 @@ FOREACH c_b INTO tipodocumento, documentobeneficiario, priape, segape,nombre
 END FOREACH 
 
 END FUNCTION   
+
+FUNCTION envio_cartones()
+DEFINE i              INTEGER,
+       dato_adjunto   STRING,
+       idCarton       INTEGER,
+       lista_adjuntos STRING    
+
+LET lista_adjuntos = ""
+       
+CALL traer_archivo_adjunto() RETURNING dato_adjunto
+
+IF NOT dato_adjunto.equals("") THEN  
+    CALL enviar_correo(dato_adjunto)
+END IF 
+END FUNCTION 
+
+FUNCTION enviar_correo(lista_adjuntos)
+DEFINE lista_adjuntos STRING,
+       comando        STRING,
+       mensaje        STRING,
+       titulo         STRING  
+
+LET titulo  = "ENVIO CARTONES DEL BINGO"
+LET mensaje = "Hacemos envío de ",r_formulario.cupos USING "<<<<", " cartones de Bingo, Suerte!" 
+LET comando = "echo ",mensaje," | mail -v -s """,titulo,"""",lista_adjuntos," ", r_formulario.correo
+RUN comando 
+END FUNCTION 
+
+FUNCTION traer_archivo_adjunto()
+DEFINE dato_adjunto STRING,
+       id           INTEGER,
+       lista        STRING  
+
+DECLARE c_f_l CURSOR FOR  
+SELECT FIRST r_formulario.cupos rutacarton, idCarton 
+INTO   dato_adjunto, id 
+FROM   bingo_carton
+WHERE  idBingo = r_formulario.idBingo
+AND    documentoafiliado IS NULL 
+ORDER BY idCarton
+
+LET lista = ""
+
+BEGIN WORK
+WHENEVER ERROR CONTINUE
+SET LOCK MODE TO WAIT 
+
+FOREACH c_f_l INTO dato_adjunto, id 
+LET lista = lista," -a /home/cartones_bingo/",dato_adjunto
+
+UPDATE bingo_carton 
+SET    bingo_carton.tipodocafil       = r_formulario.coddoc,
+       bingo_carton.documentoafiliado = r_formulario.documentoAfiliado
+WHERE  bingo_carton.idcarton          = id
+
+IF status <> 0 THEN
+    CALL fgl_winmessage("Bingos Comfaoriente","No se pudo actualizar el Cartón "||SQLERRMESSAGE,"stop")
+    ROLLBACK WORK 
+    LET lista = ""
+    EXIT FOREACH 
+END IF 
+END FOREACH 
+
+IF NOT dato_adjunto.equals("") THEN
+    COMMIT WORK 
+END IF 
+
+RETURN lista
+END FUNCTION 
